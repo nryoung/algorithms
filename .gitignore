@@ -1,3 +1,4 @@
 *.pyc
 algo_venv/
 venv/
+build/

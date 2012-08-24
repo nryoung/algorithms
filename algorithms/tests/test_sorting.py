@@ -1,6 +1,6 @@
 import random
 import unittest
-from ..sorting import bubble_sort, selection_sort, insertion_sort
+from ..sorting import bubble_sort, selection_sort, insertion_sort, merge_sort
 
 class TestBubbleSort(unittest.TestCase):
     """
@@ -32,5 +32,23 @@ class TestInsertionSort(unittest.TestCase):
         self.seq = range(10)
         random.shuffle(self.seq)
         rv = insertion_sort.sort(self.seq)
+        self.assertIs(self.seq[0], 0)
+        self.assertIs(self.seq[-1], 9)
+
+class TestMergeSrot(unittest.TestCase):
+    """
+    Tests Insertion sort on a small range from 0-9
+    """
+    def test_mergesort(self):
+        self.seq = range(10)
+        random.shuffle(self.seq)
+        self.seq = merge_sort.sort(self.seq)
+        self.assertIs(self.seq[0], 0)
+        self.assertIs(self.seq[-1], 9)
+
+    def test_merge(self):
+        self.seq1 = range(5)
+        self.seq2 = range(5,10)
+        self.seq = merge_sort.merge(self.seq1, self.seq2)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
