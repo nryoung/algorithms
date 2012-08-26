@@ -1,5 +1,4 @@
 """ Implementation of Quick Sort """
-import random
 
 def sort(seq):
    
