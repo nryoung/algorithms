@@ -1,6 +1,6 @@
 import random
 import unittest
-from ..sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, quick_sort
+from ..sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, quick_sort, heap_sort
 
 class TestBubbleSort(unittest.TestCase):
     """
@@ -57,12 +57,23 @@ class TestMergeSort(unittest.TestCase):
 class TestQuickSort(unittest.TestCase):
     """
     Test Quick sort on a small range from 0-9
-    also tests partition function included in quick sort.
     """
 
     def test_quicksort(self):
         self.seq = range(10)
         random.shuffle(self.seq)
         self.seq = quick_sort.sort(self.seq)
+        self.assertIs(self.seq[0], 0)
+        self.assertIs(self.seq[-1], 9)
+
+class TestHeapSort(unittest.TestCase):
+    """
+    Test Heap sort on a small range from 0-9
+    """
+
+    def test_heapsort(self):
+        self.seq = range(10)
+        random.shuffle(self.seq)
+        self.seq = heap_sort.sort(self.seq)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
