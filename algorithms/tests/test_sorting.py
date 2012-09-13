@@ -9,7 +9,7 @@ class TestBubbleSort(unittest.TestCase):
     def test_bubblesort(self):
         self.seq = range(10)
         random.shuffle(self.seq)
-        rv = bubble_sort.sort(self.seq)
+        self.seq = bubble_sort.sort(self.seq)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
 
@@ -20,7 +20,7 @@ class TestSelectionSort(unittest.TestCase):
     def test_selectionsort(self):
         self.seq = range(10)
         random.shuffle(self.seq)
-        rv = selection_sort.sort(self.seq)
+        self.seq = selection_sort.sort(self.seq)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
 
@@ -31,7 +31,7 @@ class TestInsertionSort(unittest.TestCase):
     def test_selectionsort(self):
         self.seq = range(10)
         random.shuffle(self.seq)
-        rv = insertion_sort.sort(self.seq)
+        self.seq = insertion_sort.sort(self.seq)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
 
