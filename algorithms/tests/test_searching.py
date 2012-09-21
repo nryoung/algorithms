@@ -1,6 +1,6 @@
 """ Unit Tests for searching """
 import unittest
-from ..searching import binary_search
+from ..searching import binary_search, kmp_search
 
 class TestBinarySearch(unittest.TestCase):
     """
@@ -16,3 +16,14 @@ class TestBinarySearch(unittest.TestCase):
         self.assertTrue(rv2)
         self.assertFalse(rv3)
         self.assertFalse(rv4)
+
+class TestKMPSearch(unittest.TestCase):
+    """
+    Tests KMP search on string "ABCDE FG ABCDEABCDEF"
+    """
+    def test_kmpsearch(self):
+        self.string = "ABCDE FG ABCDEABCDEF"
+        rv1 = kmp_search.search(self.string, "ABCDEA")
+        rv2 = kmp_search.search(self.string, "ABCDER")
+        self.assertIs(rv1, 9)
+        self.assertFalse(rv2)
