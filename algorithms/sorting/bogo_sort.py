@@ -13,6 +13,7 @@
 import random
 
 def sort(seq):
+	if len(seq) == 1: return seq
 	random.seed()
 	while not is_sorted(seq):
 		if len(seq) == 2:
