@@ -1,5 +1,27 @@
-""" Implementation of Heap Sort """
+"""
+    heap_sort.py
+    
+    This module implements heap sort on an unsorted list and returns a sorted list.
 
+    Heap Sort Overview:
+    -------------------
+    Uses a the max heap data structure implemented in a list.
+
+    Pre: an unsorted list[0,...,n] of integers.
+
+    Post: returns a sorted list[0,...,n] in ascending order.
+
+    Time Complexity: O(n^2)
+
+    Space Complexity: O(n) total
+
+    Stable: Yes
+
+    Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed. 
+
+    heap_sort.sort(list) -> sorted_list
+
+"""
 def max_heapify(seq, i, n):
     l = i + 1
     r = i + 2

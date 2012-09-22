@@ -1,4 +1,26 @@
-""" Implementation of Merge Sort. """
+"""
+    merge_sort.py
+    
+    This module implements merge sort on an unsorted list and returns a sorted list.
+    
+    Merge Sort Overview:
+    ------------------------
+    Uses divide and conquer to recursively divide and sort the list
+     
+    Pre: an unsorted list[0,...,n] of integers.
+
+    Post: returns a sorted list[0,...,n] in ascending order.
+
+    Time Complexity: O(n log n) average, O(n log n) worst case
+
+    Space Complexity: O(n) 
+
+    Stable: Yes
+
+    Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed. 
+
+    merge_sort.sort(list) -> sorted_list  
+"""
 
 def merge(left, right):
     result = []

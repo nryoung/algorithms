@@ -12,8 +12,8 @@ class TestBinarySearch(unittest.TestCase):
         rv2 = binary_search.search(self.seq, 9)
         rv3 = binary_search.search(self.seq, -1)
         rv4 = binary_search.search(self.seq, 10)
-        self.assertTrue(rv1)
-        self.assertTrue(rv2)
+        self.assertIs(rv1, 0)
+        self.assertIs(rv2, 0)
         self.assertFalse(rv3)
         self.assertFalse(rv4)
 
