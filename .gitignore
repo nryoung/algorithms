@@ -2,3 +2,4 @@
 algo_venv/
 venv/
 build/
+*~
