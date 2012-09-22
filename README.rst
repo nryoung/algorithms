@@ -30,14 +30,16 @@ Requirements are listed in :code:`requirements.txt`.
 
 If you are using pip and virtualenv you can simply do: 
 
-::
+.. code::
+    
     $ pip install -r requirements.txt
-
+    
 To clone the repository simply: 
 
-::
+.. code::
+    
     $ git clone https://github.com/nryoung/algorithms.git
-
+    
 in to your working directory.
 
 Usage:
@@ -58,7 +60,8 @@ Tests:
 
 Nose is used as the main test runner and all Unit Tests can be run by: 
 
-::
+.. code::
+    
     $ python algorithms/run_tests.py
 
 TODO:
