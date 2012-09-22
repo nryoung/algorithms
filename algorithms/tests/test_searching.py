@@ -2,10 +2,12 @@
 import unittest
 from ..searching import binary_search, kmp_search
 
+
 class TestBinarySearch(unittest.TestCase):
     """
     Tests Binary Search on a small range from 0-9
     """
+
     def test_binarysearch(self):
         self.seq = range(10)
         rv1 = binary_search.search(self.seq, 0)
@@ -17,10 +19,12 @@ class TestBinarySearch(unittest.TestCase):
         self.assertFalse(rv3)
         self.assertFalse(rv4)
 
+
 class TestKMPSearch(unittest.TestCase):
     """
     Tests KMP search on string "ABCDE FG ABCDEABCDEF"
     """
+
     def test_kmpsearch(self):
         self.string = "ABCDE FG ABCDEABCDEF"
         rv1 = kmp_search.search(self.string, "ABCDEA")
