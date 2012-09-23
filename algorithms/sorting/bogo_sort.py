@@ -1,7 +1,7 @@
 """
 	bogo_sort.py
 
-	This module imlpements bogo sort on an unsorted list and
+	This module implements bogo sort on an unsorted list and
 	returns the list in sorted order.
 
 	Bogo Sort Overview:
@@ -22,9 +22,7 @@ def sort(seq):
 		else:
 			i = random.randint(0, len(seq)-2)
 			j = random.randint(i, len(seq)-1)
-		temp = seq[i]
-		seq[i] = seq[j]
-		seq[j] = temp
+		seq[i], seq[j] = seq[j], seq[i]
 	return seq
 
 
