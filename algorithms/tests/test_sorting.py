@@ -113,14 +113,3 @@ class TestCombSort(unittest.TestCase):
         self.seq = comb_sort.sort(self.seq)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
-
-class TestBogoSort(unittest.TestCase):
-	"""
-	Test Bogo sort on a small range
-	"""
-	def test_bogosort(self):
-		self.seq = range(10)
-		random.shuffle(self.seq)
-		self.seq = bogo_sort.sort(self.seq)
-		self.assertIs(self.seq[0], 0)
-		self.assertIs(self.seq[-1], 9)
