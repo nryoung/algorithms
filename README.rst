@@ -23,6 +23,9 @@ Algorithms implemented so far:
     - Binary Search
     - Knuth-Morris-Pratt
 
+**Shuffling:**
+	- Knuth/Fisher-Yates Shuffle
+
 Installation:
 -------------
 
