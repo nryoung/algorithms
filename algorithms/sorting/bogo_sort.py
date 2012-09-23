@@ -8,6 +8,18 @@
 	-------------------
 	If list is not in order, picks two elements at random and swaps them.
 	Repeat.
+
+    Pre: 
+
+    Time Complexity: O(n * n!)
+
+    Space Complexity: O(n) total
+
+    Stable: No
+
+    bogo_sort.sort(list) -> sorted_list
+
+    WARNING: This algorithm may never sort the list correctly.
 """
 
 import random
@@ -28,5 +40,6 @@ def sort(seq):
 
 def is_sorted(seq):
 	for i in xrange(1, len(seq)):
-		if seq[i-1] > seq[i]: return False
+		if seq[i-1] > seq[i]: 
+            return False
 	return True
