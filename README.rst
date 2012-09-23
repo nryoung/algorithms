@@ -1,7 +1,7 @@
 Algorithms: a module of useful algorithms for Python
 ====================================================
 
-This is an attempt to build a cohesive module of algorithms for Python. 
+This is an attempt to build a cohesive module of algorithms in Python. 
 
 The purpose of this repo is to be a learning tool for myself and others.
 
@@ -85,7 +85,7 @@ Below is an ever changing list of things that I would like to accomplish or impl
 License:
 --------
 
-Copyright (c) 2012 by Nic Young and contributors. 
+Copyright (c) 2012 by Nic Young and contributors. See Authors.rst for more details
 
 Some rights reserved.
 
