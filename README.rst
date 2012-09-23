@@ -18,6 +18,7 @@ Algorithms implemented so far:
     - Quick Sort
     - Selection Sort
     - Shell Sort
+    - Bogo Sort
 
 **Searching:**
     - Binary Search
