@@ -1,6 +1,6 @@
 """
     heap_sort.py
-    
+
     This module implements heap sort on an unsorted list and returns a sorted list.
 
     Heap Sort Overview:
@@ -17,11 +17,13 @@
 
     Stable: Yes
 
-    Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed. 
+    Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed.
 
     heap_sort.sort(list) -> sorted_list
 
 """
+
+
 def max_heapify(seq, i, n):
     l = i + 1
     r = i + 2
@@ -32,7 +34,7 @@ def max_heapify(seq, i, n):
         largest = i
     if r <= n and seq[r] > seq[largest]:
         largest = r
-    
+
     if largest != i:
         seq[i], seq[largest] = seq[largest], seq[i]
         max_heapify(seq, largest, n)
@@ -43,6 +45,7 @@ def build_heap(seq):
     for i in range(n, -1, -1):
         max_heapify(seq, i, n)
 
+
 def sort(seq):
     build_heap(seq)
     heap_size = len(seq) - 1
@@ -50,5 +53,5 @@ def sort(seq):
         seq[0], seq[x] = seq[x], seq[0]
         heap_size = heap_size - 1
         max_heapify(seq, 0, heap_size)
-    
+
     return seq
