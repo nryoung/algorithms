@@ -12,8 +12,6 @@ class SortingAlgorithmTestCase(unittest.TestCase):
         self.input = range(10)
         random.shuffle(self.input)
         self.correct = range(10)
-        print self.input
-        print self.correct
 
 
 class TestBubbleSort(SortingAlgorithmTestCase):
