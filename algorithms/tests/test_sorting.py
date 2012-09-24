@@ -1,6 +1,6 @@
 import random
 import unittest
-from ..sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, quick_sort, heap_sort, shell_sort, comb_sort
+from ..sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, quick_sort, heap_sort, shell_sort, comb_sort, cocktail_sort
 
 
 class TestBubbleSort(unittest.TestCase):
@@ -113,3 +113,16 @@ class TestCombSort(unittest.TestCase):
         self.seq = comb_sort.sort(self.seq)
         self.assertIs(self.seq[0], 0)
         self.assertIs(self.seq[-1], 9)
+
+class TestCocktailSort(unittest.TestCase):
+    """
+    Tests Cocktail sort on a small range from 0-9
+    """
+
+    def test_cocktailsort(self):
+        self.seq = range(10)
+        random.shuffle(self.seq)
+        self.seq = cocktail_sort.sort(self.seq)
+        self.assertIs(self.seq[0], 0)
+        self.assertIs(self.seq[-1], 9)
+

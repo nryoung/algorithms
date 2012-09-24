@@ -19,6 +19,7 @@ Algorithms implemented so far:
     - Selection Sort
     - Shell Sort
     - Bogo Sort
+    - Cocktail Sort
 
 **Searching:**
     - Binary Search
