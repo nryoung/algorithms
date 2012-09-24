@@ -16,10 +16,10 @@ class TestKnuthShuffle(ShufflingAlgorithmTestCase):
     """
     def test_knuthshuffle(self):
         self.shuffle = knuth.shuffle(range(10))
+        self.not_shuffled = 0
 
-        for i in self.shuffle:
-            not_shuffled = 0
-            if i == self.sorted[i]:
-                not_shuffled = not_shuffled + 1
+        for i in self.sorted:
+            if i == self.shuffle[i]:
+                self.not_shuffled = self.not_shuffled + 1
 
-        self.assertGreater(2, not_shuffled)
+        self.assertGreater(4, self.not_shuffled)
