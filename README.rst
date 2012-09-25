@@ -24,6 +24,7 @@ Algorithms implemented so far:
 **Searching:**
     - Binary Search
     - Knuth-Morris-Pratt
+    - Rabin-Karp
 
 **Shuffling:**
 	- Knuth/Fisher-Yates Shuffle
@@ -31,6 +32,12 @@ Algorithms implemented so far:
 Installation:
 -------------
 
+To clone the repository in to your working directory: 
+
+.. code::
+    
+    $ git clone https://github.com/nryoung/algorithms.git
+    
 Requirements are listed in :code:`requirements.txt`.
 
 If you are using pip and virtualenv you can simply do: 
@@ -39,13 +46,6 @@ If you are using pip and virtualenv you can simply do:
     
     $ pip install -r requirements.txt
     
-To clone the repository simply: 
-
-.. code::
-    
-    $ git clone https://github.com/nryoung/algorithms.git
-    
-in to your working directory.
 
 Usage:
 ------
@@ -75,7 +75,6 @@ TODO:
 Below is an ever changing list of things that I would like to accomplish or implement. If you feel something needs to be added simply do a pull request.
 
 **Algorithms to implement:**
-    - Rabin-Karp
     - Mersenne Twister
     - UUID Generator
     - Bloom Filters
@@ -86,7 +85,7 @@ Below is an ever changing list of things that I would like to accomplish or impl
 License:
 --------
 
-Copyright (c) 2012 by Nic Young and contributors. See Authors.rst for more details
+Copyright (c) 2012 by Nic Young and contributors. See AUTHORS.rst for more details
 
 Some rights reserved.
 
