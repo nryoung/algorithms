@@ -1,6 +1,6 @@
 """ Unit Tests for searching """
 import unittest
-from ..searching import binary_search, kmp_search
+from ..searching import binary_search, kmp_search, rabinkarp_search
 
 
 class TestBinarySearch(unittest.TestCase):
@@ -30,4 +30,16 @@ class TestKMPSearch(unittest.TestCase):
         rv1 = kmp_search.search(self.string, "ABCDEA")
         rv2 = kmp_search.search(self.string, "ABCDER")
         self.assertIs(rv1, 9)
+        self.assertFalse(rv2)
+
+class TestRabinKarpSearch(unittest.TestCase):
+    """
+    Tests Rabin-Karp search on string "ABCDEFGHIJKLMNOP"
+    """
+
+    def test_rabinkarpsearch(self):
+        self.string = "ABCDEFGHIJKLMNOP"
+        rv1 = rabinkarp_search.search(self.string,"MNOP")
+        rv2 = rabinkarp_search.search(self.string,"BCA")
+        self.assertIs(rv1,12)
         self.assertFalse(rv2)
