@@ -11,15 +11,15 @@ Algorithms implemented so far:
 ------------------------------
 
 **Sorting:**
+    - Bogo Sort
     - Bubble Sort
+    - Cocktail Sort
     - Comb Sort
     - Heap Sort
     - Insertion Sort
     - Quick Sort
     - Selection Sort
     - Shell Sort
-    - Bogo Sort
-    - Cocktail Sort
 
 **Searching:**
     - Binary Search
