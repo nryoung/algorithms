@@ -61,13 +61,23 @@ Once cloned you can simply do the following in your program:
 All prequisites for the algorithms are listed in the source code for each algorithm.
 
 Tests:
-------------------------
+------
 
 Nose is used as the main test runner and all Unit Tests can be run by: 
 
 .. code::
     
     $ python algorithms/run_tests.py
+
+Contributing:
+-------------
+
+If there is an algorithm or data structure that you do not see, but would like to add please feel free to do a pull request. I only ask two things:
+
+1. For each algorithm and data structure you implement please have corresponding unit tests to prove correctness.
+2. Please make sure that your module follows similar style guidelines that are laid out in the other modules.
+
+I want to personally thank everybody that has contributed so far and your names will be added to :code:`AUTHORS.rst`.
 
 TODO:
 -----

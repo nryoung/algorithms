@@ -6,3 +6,4 @@ List of contributors:
 - ppinette
 - kngspook
 - cmackenziek
+- nyqvist
