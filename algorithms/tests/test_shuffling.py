@@ -22,4 +22,4 @@ class TestKnuthShuffle(ShufflingAlgorithmTestCase):
             if i == self.shuffle[i]:
                 self.not_shuffled = self.not_shuffled + 1
 
-        self.assertGreater(4, self.not_shuffled)
+        self.assertGreater(5, self.not_shuffled)
