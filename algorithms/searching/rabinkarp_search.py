@@ -21,15 +21,16 @@
 
 import hashlib
 
-def search(s,sub):
-	n, m = len(s), len(sub)
-	hsub, hs = hashlib.md5(sub), hashlib.md5(s[0:m])
 
-	for i in range(n - m + 1):
-		if hs.hexdigest() == hsub.hexdigest():
-			if s[i:i+m] == sub:
-				return i
-		news = s[i+1:i+m+1]
-		hs = hashlib.md5(news)
+def search(s, sub):
+    n, m = len(s), len(sub)
+    hsub, hs = hashlib.md5(sub), hashlib.md5(s[0:m])
 
-	return False
+    for i in range(n - m + 1):
+        if hs.hexdigest() == hsub.hexdigest():
+            if s[i:i + m] == sub:
+                return i
+        news = s[i + 1:i + m + 1]
+        hs = hashlib.md5(news)
+
+    return False
