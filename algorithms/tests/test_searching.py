@@ -41,7 +41,7 @@ class TestKMPSearch(unittest.TestCase):
         self.string = "ABCDE FG ABCDEABCDEF"
         rv1 = kmp_search.search(self.string, "ABCDEA")
         rv2 = kmp_search.search(self.string, "ABCDER")
-        self.assertIs(rv1, 9)
+        self.assertIs(rv1[0], 9)
         self.assertFalse(rv2)
 
 

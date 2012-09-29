@@ -15,28 +15,30 @@
 
     Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed.
 
-    kmp_search.search(sorted_list) -> integer
-    kmp_search.search(sorted_list) -> False
+    kmp_search.search(sorted_list) -> list[integers]
+    kmp_search.search(sorted_list) -> list[empty]
 """
 
 
 def search(string, word):
     word_length = len(word)
     prefix = compute_prefix(word)
-    q = 0
+    offsets = []
+    q = 0 # q is the number of characters matched
     for i in xrange(len(string)):
         while q > 0 and word[q] != string[i]:
-            q = prefix[q - 1]
+            q = prefix[q - 1] # next character does not match
         if word[q] == string[i]:
-            q = q + 1
+            q += 1
         if q == word_length:
-            return i - word_length + 1
-    return False
+            offsets.append(i - word_length + 1)
+            q = prefix[q - 1] # look for next match
+    return offsets
 
 
 def compute_prefix(word):
     word_length = len(word)
-    prefix = [0] * word_length
+    prefix = [0 for i in xrange(word_length)]
     k = 0
 
     for q in xrange(1, word_length):
