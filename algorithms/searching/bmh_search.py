@@ -12,7 +12,7 @@
 
     Post: returns a list of indexes where the substring was found.
 
-    Time: Complexity: O( m + n), where m is the substring to be found.
+    Time: Complexity: O(m + n), where m is the substring to be found.
 
     Space: Complexity: O(m), where m is the substring to be found.
 
