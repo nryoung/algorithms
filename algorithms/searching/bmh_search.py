@@ -30,7 +30,14 @@ def search(text, pattern):
     offsets = []
     if pattern_length > text_length:
         return offsets
+    # bmbc is a lookup-tuple of "skip values"
+    # if we're looking at an index of text, and we
+    # can't find part of pattern there, we can safely
+    # skip back up to pattern_length characters
     bmbc = [pattern_length] * 256
+    # if we do find part of pattern there, but it's a
+    # failed search at that index, we jump back
+    # (pattern_length - k - 1) characters
     for k, p in enumerate(pattern[:-1]):
         bmbc[ord(p)] = pattern_length - k - 1
     bmbc = tuple(bmbc)
