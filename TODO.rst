@@ -62,3 +62,7 @@ Below is an ever changing list of things that I would like to accomplish or impl
 **Misc.:**
     - Performance Tests
     - Much much more extensive testing, edge cases, etc
+    - Steal more algorithms from Algorithms by Dasgupta,
+      Papadimitriou, and Vazirani
+    - Also extract algorithms from The Algorithm Design Manual by
+      Skiena
