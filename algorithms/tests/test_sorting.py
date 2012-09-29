@@ -7,7 +7,7 @@ class SortingAlgorithmTestCase(unittest.TestCase):
     """
     Shared code for a sorting unit test.
     """
-    
+
     def setUp(self):
         self.input = range(10)
         random.shuffle(self.input)
@@ -101,6 +101,7 @@ class TestCombSort(SortingAlgorithmTestCase):
         self.output = comb_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
 
+
 class TestCocktailSort(SortingAlgorithmTestCase):
     """
     Tests Cocktail sort on a small range from 0-9
@@ -109,4 +110,3 @@ class TestCocktailSort(SortingAlgorithmTestCase):
     def test_cocktailsort(self):
         self.output = cocktail_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
-
