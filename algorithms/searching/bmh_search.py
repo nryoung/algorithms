@@ -45,8 +45,9 @@ def search(text, pattern):
     while search_index < text_length:
         pattern_index = pattern_length - 1
         text_index = search_index
-        while text_index >= 0 and
+        while text_index >= 0 and \
               text[text_index] == pattern[pattern_index]:
+            print text_index, pattern_index
             pattern_index -= 1
             text_index -= 1
         if pattern_index == -1:
