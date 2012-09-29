@@ -8,3 +8,4 @@ List of contributors:
 - cmackenziek
 - nyqvist
 - jabagawee
+- kishinmanglani
