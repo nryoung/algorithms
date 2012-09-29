@@ -22,17 +22,16 @@
     bmh_search.search(string, substring) -> list[integers]
     bmh_search.search(string, substring) -> list[empty]
 """
+
+
 def search(text, pattern):
-    m = len(pattern)
-    n = len(text)
+    m, n = len(pattern), len(text)
     offsets = []
     if m > n:
         return offsets
-    bmbc = []
-    for k in range(256):
-        bmbc.append(m)
-    for k in range(m - 1):
-        bmbc[ord(pattern[k])] = m - k - 1
+    bmbc = [m] * 256
+    for k, p in enumerate(pattern[:-1]):
+        bmbc[ord(p)] = m - k - 1
     bmbc = tuple(bmbc)
     k = m - 1
     while k < n:
@@ -44,5 +43,5 @@ def search(text, pattern):
         if j == -1:
             offsets.append(i + 1)
         k += bmbc[ord(text[k])]
-    
+
     return offsets
