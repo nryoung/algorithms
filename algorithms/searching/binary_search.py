@@ -24,7 +24,7 @@ def search(seq, key):
     lo = 0
     hi = len(seq)
 
-    while hi > lo:
+    while hi >= lo:
         mid = (lo + hi) / 2
         if seq[mid] < key:
             lo = mid + 1
