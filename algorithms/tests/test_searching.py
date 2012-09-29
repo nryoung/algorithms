@@ -44,6 +44,7 @@ class TestKMPSearch(unittest.TestCase):
         self.assertIs(rv1, 9)
         self.assertFalse(rv2)
 
+
 class TestRabinKarpSearch(unittest.TestCase):
     """
     Tests Rabin-Karp search on string "ABCDEFGHIJKLMNOP"
@@ -51,10 +52,11 @@ class TestRabinKarpSearch(unittest.TestCase):
 
     def test_rabinkarpsearch(self):
         self.string = "ABCDEFGHIJKLMNOP"
-        rv1 = rabinkarp_search.search(self.string,"MNOP")
-        rv2 = rabinkarp_search.search(self.string,"BCA")
-        self.assertIs(rv1,12)
+        rv1 = rabinkarp_search.search(self.string, "MNOP")
+        rv2 = rabinkarp_search.search(self.string, "BCA")
+        self.assertIs(rv1, 12)
         self.assertFalse(rv2)
+
 
 class TestBMHSearch(unittest.TestCase):
     """
@@ -65,7 +67,5 @@ class TestBMHSearch(unittest.TestCase):
         self.string = "ABCDE FG ABCDEABCDEF"
         rv1 = bmh_search.search(self.string, "ABCDEA")
         rv2 = bmh_search.search(self.string, "ABCDER")
-        self.assertIs(rv1[0],9)
+        self.assertIs(rv1[0], 9)
         self.assertFalse(rv2)
-
-

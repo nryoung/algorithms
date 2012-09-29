@@ -7,3 +7,4 @@ List of contributors:
 - kngspook
 - cmackenziek
 - nyqvist
+- jabagawee

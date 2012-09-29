@@ -22,6 +22,8 @@
     bmh_search.search(string, substring) -> list[integers]
     bmh_search.search(string, substring) -> list[empty]
 """
+
+
 def search(text, pattern):
     m = len(pattern)
     n = len(text)
@@ -44,5 +46,5 @@ def search(text, pattern):
         if j == -1:
             offsets.append(i + 1)
         k += bmbc[ord(text[k])]
-    
+
     return offsets
