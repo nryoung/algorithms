@@ -25,17 +25,18 @@
 
 
 def search(text, pattern):
-    m, n = len(pattern), len(text)
+    pattern_length = len(pattern)
+    text_length = len(text)
     offsets = []
-    if m > n:
+    if pattern_length > text_length:
         return offsets
-    bmbc = [m] * 256
+    bmbc = [pattern_length] * 256
     for k, p in enumerate(pattern[:-1]):
-        bmbc[ord(p)] = m - k - 1
+        bmbc[ord(p)] = pattern_length - k - 1
     bmbc = tuple(bmbc)
-    k = m - 1
-    while k < n:
-        j = m - 1
+    k = pattern_length - 1
+    while k < text_length:
+        j = pattern_length - 1
         i = k
         while j >= 0 and text[i] == pattern[j]:
             j -= 1
