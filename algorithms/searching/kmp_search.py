@@ -9,7 +9,7 @@
 
     Pre: a string > substring.
 
-    Post: returns the first index where the substring was found.
+    Post: returns a list of indices where the substring was found.
 
     Time Complexity:  O(n + k), where k is the substring to be found
 
@@ -24,7 +24,7 @@ def search(string, word):
     word_length = len(word)
     prefix = compute_prefix(word)
     q = 0
-    for i in range(len(string)):
+    for i in xrange(len(string)):
         while q > 0 and word[q] != string[i]:
             q = prefix[q - 1]
         if word[q] == string[i]:
@@ -39,7 +39,7 @@ def compute_prefix(word):
     prefix = [0] * word_length
     k = 0
 
-    for q in range(1, word_length):
+    for q in xrange(1, word_length):
         while k > 0 and word[k] != word[q]:
             k = prefix[k - 1]
 
