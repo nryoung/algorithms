@@ -37,19 +37,20 @@ def search(text, pattern):
     bmbc = [pattern_length] * 256
     # if we do find part of pattern there, but it's a
     # failed search at that index, we jump back
-    # (pattern_length - k - 1) characters
-    for k, p in enumerate(pattern[:-1]):
-        bmbc[ord(p)] = pattern_length - k - 1
+    # (pattern_length - index - 1) characters
+    for index, char in enumerate(pattern[:-1]):
+        bmbc[ord(char)] = pattern_length - index - 1
     bmbc = tuple(bmbc)
-    k = pattern_length - 1
-    while k < text_length:
-        j = pattern_length - 1
-        i = k
-        while j >= 0 and text[i] == pattern[j]:
-            j -= 1
-            i -= 1
-        if j == -1:
-            offsets.append(i + 1)
-        k += bmbc[ord(text[k])]
+    search_index = pattern_length - 1
+    while search_index < text_length:
+        pattern_index = pattern_length - 1
+        text_index = search_index
+        while text_index >= 0 and
+              text[text_index] == pattern[pattern_index]:
+            pattern_index -= 1
+            text_index -= 1
+        if pattern_index == -1:
+            offsets.append(text_index + 1)
+        search_index += bmbc[ord(text[search_index])]
 
     return offsets
