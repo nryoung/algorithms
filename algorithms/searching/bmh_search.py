@@ -10,7 +10,7 @@
 
     Pre: a string > substring.
 
-    Post: returns a list of indexes where the substring was found.
+    Post: returns a list of indices where the substring was found.
 
     Time: Complexity: O(m + n), where m is the substring to be found.
 
