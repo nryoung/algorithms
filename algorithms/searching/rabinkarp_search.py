@@ -9,28 +9,29 @@
 
     Pre: two strings, one to search in and one to search for.
 
-    Post: returns the index of the start of the search string.
+    Post: returns a list of indices where the substring was found
 
-    Time Complexity:  O(nm)
+    Time Complexity: O(nm)
 
     Psuedo Code: http://en.wikipedia.org/wiki/Rabin-Karp_algorithm
 
-    rabinkarp_search.search(searchString, targetString) -> integer
-    rabinkarp_search.search(searchString, targetString) -> False
+    rabinkarp_search.search(searchString, targetString) -> list[integers]
+    rabinkarp_search.search(searchString, targetString) -> list[empty]
 """
 
-import hashlib
-
+from hashlib import md5
 
 def search(s, sub):
     n, m = len(s), len(sub)
-    hsub, hs = hashlib.md5(sub), hashlib.md5(s[0:m])
+    hsub = md5(sub)
+    offsets = []
+    if m > n:
+        return offsets
 
-    for i in range(n - m + 1):
-        if hs.hexdigest() == hsub.hexdigest():
+    for i in xrange(n - m + 1):
+        hs = md5(s[i:i + m])
+        if hs.digest() == hsub.digest():
             if s[i:i + m] == sub:
-                return i
-        news = s[i + 1:i + m + 1]
-        hs = hashlib.md5(news)
+                offsets.append(i)
 
-    return False
+    return offsets
