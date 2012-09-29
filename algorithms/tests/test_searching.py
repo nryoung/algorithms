@@ -14,11 +14,23 @@ class TestBinarySearch(unittest.TestCase):
         rv2 = binary_search.search(self.seq, 9)
         rv3 = binary_search.search(self.seq, -1)
         rv4 = binary_search.search(self.seq, 10)
+        rv5 = binary_search.search(self.seq, 4)
         self.assertIs(rv1, 0)
-        self.assertIs(rv2, 0)
+        self.assertIs(rv2, 9)
         self.assertFalse(rv3)
         self.assertFalse(rv4)
-
+        self.assertIs(rv5, 4)
+        self.seq = range(9)
+        rv1 = binary_search.search(self.seq, 0)
+        rv2 = binary_search.search(self.seq, 8)
+        rv3 = binary_search.search(self.seq, -1)
+        rv4 = binary_search.search(self.seq, 10)
+        rv5 = binary_search.search(self.seq, 4)
+        self.assertIs(rv1, 0)
+        self.assertIs(rv2, 8)
+        self.assertFalse(rv3)
+        self.assertFalse(rv4)
+        self.assertIs(rv5, 4)
 
 class TestKMPSearch(unittest.TestCase):
     """
