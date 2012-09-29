@@ -7,43 +7,43 @@
     ------------------------
     Uses a prefix function to reduce the searching time.
 
-    Pre: a sorted list[0,...n,] integers and the key to search for.
+    Pre: a string > substring.
 
-    Post: returns the index of where the first element that matches the key.
+    Post: returns the first index where the substring was found.
 
     Time Complexity:  O(n + k), where k is the substring to be found
 
     Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed.
+
     kmp_search.search(sorted_list) -> integer
     kmp_search.search(sorted_list) -> False
 """
 
 
 def search(string, word):
-    n = len(string)
-    m = len(word)
-    pi = compute_prefix(word)
+    word_length = len(word)
+    prefix = compute_prefix(word)
     q = 0
-    for i in range(n):
+    for i in range(len(string)):
         while q > 0 and word[q] != string[i]:
-            q = pi[q - 1]
+            q = prefix[q - 1]
         if word[q] == string[i]:
             q = q + 1
-        if q == m:
-            return i - m + 1
+        if q == word_length:
+            return i - word_length + 1
     return False
 
 
 def compute_prefix(word):
-    m = len(word)
-    pi = [0] * m
+    word_length = len(word)
+    prefix = [0] * word_length
     k = 0
 
-    for q in range(1, m):
+    for q in range(1, word_length):
         while k > 0 and word[k] != word[q]:
-            k = pi[k - 1]
+            k = prefix[k - 1]
 
         if word[k + 1] == word[q]:
             k = k + 1
-        pi[q] = k
-    return pi
+        prefix[q] = k
+    return prefix
