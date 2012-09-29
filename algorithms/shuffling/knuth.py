@@ -1,14 +1,14 @@
 """
-        knuth.py
-        Implementation of the Fisher-Yates/Knuth shuffle
-
-        Pre: Takes any list, unshuffled
-        Post: Returns list shuffled randomly
-
-        Time Complexity: n
-        Space Complexity: n
-
-        Pseudocode: http://en.wikipedia.org/wiki/Fisher%E1%80%93Yates_shuffle
+    knuth.py
+    Implementation of the Fisher-Yates/Knuth shuffle
+    
+    Pre: Takes any list, unshuffled
+    Post: Returns list shuffled randomly
+    
+    Time Complexity: n
+    Space Complexity: n
+    
+    Pseudocode: http://en.wikipedia.org/wiki/Fisher%E1%80%93Yates_shuffle
 
 """
 import random

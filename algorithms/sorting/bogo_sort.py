@@ -1,13 +1,13 @@
 """
-        bogo_sort.py
-
-        This module implements bogo sort on an unsorted list and
-        returns the list in sorted order.
-
-        Bogo Sort Overview:
-        -------------------
-        If list is not in order, picks two elements at random and swaps them.
-        Repeat.
+    bogo_sort.py
+    
+    This module implements bogo sort on an unsorted list and
+    returns the list in sorted order.
+    
+    Bogo Sort Overview:
+    -------------------
+    If list is not in order, picks two elements at random and swaps them.
+    Repeat.
 
     Pre:
 
