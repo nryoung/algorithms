@@ -26,7 +26,6 @@ def search(seq, key):
 
     while hi > lo:
         mid = (lo + hi) / 2
-        print mid
         if seq[mid] < key:
             lo = mid + 1
         elif seq[mid] > key:
