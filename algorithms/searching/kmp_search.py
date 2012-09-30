@@ -23,10 +23,12 @@
 def search(string, word):
     word_length = len(word)
     string_length = len(string)
-    prefix = compute_prefix(word)
     offsets = []
+
     if word_length > string_length:
         return offsets
+
+    prefix = compute_prefix(word)
     q = 0 # q is the number of characters matched
     for index, letter in enumerate(string):
         while q > 0 and word[q] != letter:
