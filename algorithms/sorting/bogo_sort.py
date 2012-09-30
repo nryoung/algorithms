@@ -1,9 +1,9 @@
 """
     bogo_sort.py
-    
+
     This module implements bogo sort on an unsorted list and
     returns the list in sorted order.
-    
+
     Bogo Sort Overview:
     -------------------
     If list is not in order, picks two elements at random and swaps them.
@@ -41,7 +41,4 @@ def sort(seq):
 
 
 def is_sorted(seq):
-    for i in xrange(1, len(seq)):
-        if seq[i - 1] > seq[i]:
-            return False
-    return True
+    return all(seq[i - 1] <= seq[i] for i in xrange(1, len(seq)))
