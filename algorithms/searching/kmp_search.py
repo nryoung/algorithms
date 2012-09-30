@@ -28,13 +28,13 @@ def search(string, word):
     if word_length > string_length:
         return offsets
     q = 0 # q is the number of characters matched
-    for i in xrange(string_length):
-        while q > 0 and word[q] != string[i]:
+    for index, letter in enumerate(string):
+        while q > 0 and word[q] != letter:
             q = prefix[q - 1] # next character does not match
-        if word[q] == string[i]:
+        if word[q] == letter:
             q += 1
         if q == word_length:
-            offsets.append(i - word_length + 1)
+            offsets.append(index - word_length + 1)
             q = prefix[q - 1] # look for next match
     return offsets
 
