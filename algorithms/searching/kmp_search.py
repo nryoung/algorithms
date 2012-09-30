@@ -43,7 +43,7 @@ def search(string, word):
 
 def compute_prefix(word):
     word_length = len(word)
-    prefix = [0 for i in xrange(word_length)]
+    prefix = [0] * word_length
     k = 0
 
     for q in xrange(1, word_length):
