@@ -23,14 +23,13 @@ from hashlib import md5
 
 def search(s, sub):
     n, m = len(s), len(sub)
-    hsub = md5(sub)
+    hsub_digest = md5(sub).digest()
     offsets = []
     if m > n:
         return offsets
 
     for i in xrange(n - m + 1):
-        hs = md5(s[i:i + m])
-        if hs.digest() == hsub.digest():
+        if md5(s[i:i + m]).digest() == hsub_digest:
             if s[i:i + m] == sub:
                 offsets.append(i)
 
