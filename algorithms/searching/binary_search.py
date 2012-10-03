@@ -29,7 +29,7 @@ def search(seq, key):
         if seq[mid] < key:
             lo = mid + 1
         elif seq[mid] > key:
-            hi = mid 
+            hi = mid - 1
         else:
             return mid
     return False
