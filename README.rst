@@ -84,7 +84,7 @@ I want to personally thank everybody that has contributed so far and your names 
 TODO:
 -----
 
-See `TODO.rst`.
+See :code:`TODO.rst`.
 
 License:
 --------

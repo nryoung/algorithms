@@ -8,7 +8,6 @@ Below is an ever changing list of things that I would like to accomplish or impl
     - UUID Generator
     - Bloom Filters
     - Sorting
-      - Merge Sort
       - In-Place Merge Sort
       - Binary Tree Sort
       - Cycle Sort
