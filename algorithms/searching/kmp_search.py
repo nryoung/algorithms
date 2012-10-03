@@ -7,43 +7,50 @@
     ------------------------
     Uses a prefix function to reduce the searching time.
 
-    Pre: a sorted list[0,...n,] integers and the key to search for.
+    Pre: a string > substring.
 
-    Post: returns the index of where the first element that matches the key.
+    Post: returns a list of indices where the substring was found.
 
     Time Complexity:  O(n + k), where k is the substring to be found
 
     Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed.
-    kmp_search.search(sorted_list) -> integer
-    kmp_search.search(sorted_list) -> False
+
+    kmp_search.search(sorted_list) -> list[integers]
+    kmp_search.search(sorted_list) -> list[empty]
 """
 
 
 def search(string, word):
-    n = len(string)
-    m = len(word)
-    pi = compute_prefix(word)
-    q = 0
-    for i in range(n):
-        while q > 0 and word[q] != string[i]:
-            q = pi[q - 1]
-        if word[q] == string[i]:
-            q = q + 1
-        if q == m:
-            return i - m + 1
-    return False
+    word_length = len(word)
+    string_length = len(string)
+    offsets = []
+
+    if word_length > string_length:
+        return offsets
+
+    prefix = compute_prefix(word)
+    q = 0 # q is the number of characters matched
+    for index, letter in enumerate(string):
+        while q > 0 and word[q] != letter:
+            q = prefix[q - 1] # next character does not match
+        if word[q] == letter:
+            q += 1
+        if q == word_length:
+            offsets.append(index - word_length + 1)
+            q = prefix[q - 1] # look for next match
+    return offsets
 
 
 def compute_prefix(word):
-    m = len(word)
-    pi = [0] * m
+    word_length = len(word)
+    prefix = [0] * word_length
     k = 0
 
-    for q in range(1, m):
+    for q in xrange(1, word_length):
         while k > 0 and word[k] != word[q]:
-            k = pi[k - 1]
+            k = prefix[k - 1]
 
         if word[k + 1] == word[q]:
             k = k + 1
-        pi[q] = k
-    return pi
+        prefix[q] = k
+    return prefix
