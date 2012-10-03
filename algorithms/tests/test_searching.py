@@ -54,7 +54,7 @@ class TestRabinKarpSearch(unittest.TestCase):
         self.string = "ABCDEFGHIJKLMNOP"
         rv1 = rabinkarp_search.search(self.string, "MNOP")
         rv2 = rabinkarp_search.search(self.string, "BCA")
-        self.assertIs(rv1, 12)
+        self.assertIs(rv1[0], 12)
         self.assertFalse(rv2)
 
 
