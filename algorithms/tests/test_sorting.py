@@ -1,6 +1,7 @@
 import random
 import unittest
-from ..sorting import bubble_sort, selection_sort, insertion_sort, merge_sort, quick_sort, heap_sort, shell_sort, comb_sort, cocktail_sort
+from ..sorting import bubble_sort, selection_sort, insertion_sort, \
+    merge_sort, quick_sort, heap_sort, shell_sort, comb_sort, cocktail_sort
 
 
 class SortingAlgorithmTestCase(unittest.TestCase):
