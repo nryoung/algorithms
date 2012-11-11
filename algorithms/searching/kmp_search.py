@@ -29,15 +29,15 @@ def search(string, word):
         return offsets
 
     prefix = compute_prefix(word)
-    q = 0 # q is the number of characters matched
+    q = 0
     for index, letter in enumerate(string):
         while q > 0 and word[q] != letter:
-            q = prefix[q - 1] # next character does not match
+            q = prefix[q - 1]
         if word[q] == letter:
             q += 1
         if q == word_length:
             offsets.append(index - word_length + 1)
-            q = prefix[q - 1] # look for next match
+            q = prefix[q - 1]
     return offsets
 
 
