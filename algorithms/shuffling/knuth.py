@@ -14,9 +14,9 @@
 from random import seed, randint
 
 
-def shuffle(li):
+def shuffle(seq):
     seed()
-    for i in reversed(range(len(li))):
+    for i in reversed(range(len(seq))):
         j = randint(0, i)
-        li[i], li[j] = li[j], li[i]
-    return li
+        seq[i], seq[j] = seq[j], seq[i]
+    return seq
