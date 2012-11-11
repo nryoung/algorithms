@@ -1,25 +1,19 @@
 """
     comb_sort.py
 
-    This module implements comb sort on an unsorted list and returns a sorted list.
+    Implementation of comb sort on a list and returns a sorted list.
 
     Comb Sort Overview:
     -------------------
     Improves on bubble sort by using a gap sequence to remove turtles.
 
-    Pre: an unsorted list[0,...,n] of integers.
+    Time Complexity: O(n**2)
 
-    Post: returns a sorted list[0,...,n] in ascending order.
-
-    Time Complexity: O(n^2)
-
-    Space Complexity: O(n) total
+    Space Complexity: O(1) Auxiliary
 
     Stable: Yes
 
     Psuedo code: http://en.wikipedia.org/wiki/Comb_sort
-
-    comb_sort.sort(list) -> sorted_list
 
 """
 

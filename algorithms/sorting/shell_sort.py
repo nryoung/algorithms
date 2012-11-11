@@ -1,25 +1,20 @@
 """
     shell_sort.py
 
-    This module implements shell sort on an unsorted list and returns a sorted list.
+    Implementation of shell sort on an list and returns a sorted list.
 
     Shell Sort Overview:
     ------------------------
     Comparision sort that sorts far away elements first to sort the list
 
-    Pre: an unsorted list[0,...,n] of integers.
+    Time Complexity:  O(n**2)
 
-    Post: returns a sorted list[0,...,n] in ascending order.
-
-    Time Complexity:  O(n^2)
-
-    Space Complexity: O(n)
+    Space Complexity: O(1) Auxiliary
 
     Stable: Yes
 
     Psuedo Code: http://en.wikipedia.org/wiki/Shell_sort
 
-    shell_sort.sort(list) -> sorted_list
 """
 
 

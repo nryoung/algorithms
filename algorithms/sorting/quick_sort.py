@@ -1,25 +1,20 @@
 """
     quick_sort.py
 
-    This module implements quick sort on an unsorted list and returns a sorted list.
+    Implementation of quick sort on a list and returns a sorted list.
 
     Quick Sort Overview:
     ------------------------
     Uses partitioning to recursively divide and sort the list
 
-    Pre: an unsorted list[0,...,n] of integers.
+    Time Complexity: O(n**2) worst case
 
-    Post: returns a sorted list[0,...,n] in ascending order.
-
-    Time Complexity: O(n log n) average, O(n^2) worst case
-
-    Space Complexity: O(n)
+    Space Complexity: O(n**2) this version
 
     Stable: No
 
     Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed.
 
-    quick_sort.sort(list) -> sorted_list
 """
 
 

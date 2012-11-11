@@ -1,23 +1,17 @@
 """
     bogo_sort.py
 
-    This module implements bogo sort on an unsorted list and
-    returns the list in sorted order.
+    Implementation of bogo sort on a list and returns a sorted list.
 
     Bogo Sort Overview:
     -------------------
-    If list is not in order, picks two elements at random and swaps them.
-    Repeat.
-
-    Pre:
+    A naive sorting that picks two elements at random and swaps them.
 
     Time Complexity: O(n * n!)
 
-    Space Complexity: O(n) total
+    Space Complexity: O(1) Auxiliary
 
     Stable: No
-
-    bogo_sort.sort(list) -> sorted_list
 
     WARNING: This algorithm may never sort the list correctly.
 """

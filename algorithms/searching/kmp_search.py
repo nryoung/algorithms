@@ -1,22 +1,16 @@
 """
     kmp_search.py
 
-    This module implements kmp search on a sorted list.
+    Implementation of kmp search on a sorted list.
 
     KMP Search Overview:
     ------------------------
     Uses a prefix function to reduce the searching time.
 
-    Pre: a string > substring.
-
-    Post: returns a list of indices where the substring was found.
-
     Time Complexity:  O(n + k), where k is the substring to be found
 
     Psuedo Code: CLRS. Introduction to Algorithms. 3rd ed.
 
-    kmp_search.search(sorted_list) -> list[integers]
-    kmp_search.search(sorted_list) -> list[empty]
 """
 
 

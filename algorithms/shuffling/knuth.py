@@ -2,11 +2,12 @@
     knuth.py
     Implementation of the Fisher-Yates/Knuth shuffle
 
-    Pre: Takes any list, unshuffled
-    Post: Returns list shuffled randomly
+    Fisher-Yates/Knuth Overview:
+    ----------------------------
+    Randomly picks integers to swap elements in an ubiased manner.
 
-    Time Complexity: n
-    Space Complexity: n
+    Time Complexity: O(n)
+    Space Complexity: O(n)n
 
     Pseudocode: http://en.wikipedia.org/wiki/Fisher%E1%80%93Yates_shuffle
 
