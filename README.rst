@@ -29,7 +29,10 @@ Algorithms implemented so far:
     - Rabin-Karp
 
 **Shuffling:**
-	- Knuth/Fisher-Yates Shuffle
+    - Knuth/Fisher-Yates Shuffle
+
+**Math:**
+    - Extended GCD
 
 Installation:
 -------------
@@ -37,17 +40,17 @@ Installation:
 To clone the repository in to your working directory: 
 
 .. code::
-    
+
     $ git clone https://github.com/nryoung/algorithms.git
-    
+
 Requirements are listed in :code:`requirements.txt`.
 
 If you are using pip and virtualenv you can simply do: 
 
 .. code::
-    
+
     $ pip install -r requirements.txt
-    
+
 
 Usage:
 ------
@@ -68,7 +71,7 @@ Tests:
 Nose is used as the main test runner and all Unit Tests can be run by: 
 
 .. code::
-    
+
     $ python algorithms/run_tests.py
 
 Contributing:
