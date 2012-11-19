@@ -51,7 +51,6 @@ Below is an ever changing list of things that I would like to accomplish or impl
     - Matrix Inversion
     - Simplex Algorithm for Linear Programs
     - Fast Fourier Transform
-    - (Extended) Greatest Common Denominator
     - RSA
     - Primality Testing
     - Integer Factorization
