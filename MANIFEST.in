@@ -1,0 +1,3 @@
+include TODO.rst AUTHORS.rst requirements.txt run_tests.py README.rst
+recursive-include algorithms *
+recursive-exclude algorithms *.pyc
