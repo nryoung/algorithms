@@ -3,3 +3,5 @@ algo_venv/
 venv/
 build/
 *~
+/dist/
+/*.egg-info
