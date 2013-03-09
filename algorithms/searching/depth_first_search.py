@@ -16,6 +16,8 @@
     Pseudocode: https://en.wikipedia.org/wiki/Depth-first_search    
 """
 def dfs(graph,start,path = []):
+    if start not in graph or graph[start] == None or graph[start] == []:
+        return None
     path = path + [start]
     for edge in graph[start]:
         if edge not in path:

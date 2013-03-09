@@ -85,8 +85,10 @@ class TestDepthFirstSearch(unittest.TestCase):
                       'G': ['C']}
         rv1 = depth_first_search.dfs(self.graph, "A")
         rv2 = depth_first_search.dfs(self.graph, "G")
+        rv1e = depth_first_search.dfs(self.graph, "Z")
         self.assertEqual(rv1, ['A', 'B', 'D', 'F', 'C', 'G', 'E'])
         self.assertEqual(rv2, ['G', 'C', 'A', 'B', 'D', 'F', 'E'])
+        self.assertEqual(rv1e, None)
         self.graph = {1:[2,3,4],
                       2:[1,6,10],
                       3:[1,5,10],
@@ -102,9 +104,11 @@ class TestDepthFirstSearch(unittest.TestCase):
         rv3 = depth_first_search.dfs(self.graph,1)
         rv4 = depth_first_search.dfs(self.graph,5)
         rv5 = depth_first_search.dfs(self.graph,6)
+        rv2e = depth_first_search.dfs(self.graph,99)
         self.assertEqual(rv3, [1, 2, 6, 7, 8, 9, 10, 3, 5, 12, 4, 11])
         self.assertEqual(rv4, [5, 3, 1, 2, 6, 7, 8, 9, 10, 12, 4, 11])
         self.assertEqual(rv5, [6, 2, 1, 3, 5, 10, 9, 12, 4, 11, 7, 8])
+        self.assertEqual(rv2e, None)
         self.graph = {1:[2,3,4,5,6],
                      2:[1,4,7,8,9],
                      3:[1,10],
@@ -123,6 +127,8 @@ class TestDepthFirstSearch(unittest.TestCase):
         rv6 = depth_first_search.dfs(self.graph,1)
         rv7 = depth_first_search.dfs(self.graph,10)
         rv8 = depth_first_search.dfs(self.graph,5)
+        rv3e = depth_first_search.dfs(self.graph,-1)
         self.assertEqual(rv6, [1, 2, 4, 11, 12, 7, 8, 9, 10, 3, 5, 13, 14, 15, 6])
         self.assertEqual(rv7, [10, 3, 1, 2, 4, 11, 12, 7, 8, 9, 5, 13, 14, 15, 6])
         self.assertEqual(rv8, [5, 1, 2, 4, 11, 12, 7, 8, 9, 10, 3, 6, 15, 13, 14])
+        self.assertEqual(rv3e, None)
