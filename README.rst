@@ -38,6 +38,9 @@ Algorithms implemented so far:
 
 - Extended GCD
 
+**Random:**
+- Mersenne Twister
+
 
 Installation:
 -------------
