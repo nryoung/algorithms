@@ -1,3 +1,8 @@
+Development Lead:
+-----------------
+
+- `Nic Young <https://github.com/nryoung>`_
+
 List of contributors:
 --------------------
 
