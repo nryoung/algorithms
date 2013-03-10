@@ -18,3 +18,4 @@ List of contributors:
 - `utsavgupta <https://github.com/utsavgupta>`_
 - `skirkpatrick <https://github.com/skirkpatrick>`_
 - `conanchou <https://github.com/ConanChou>`_
+- `lcheung90 <https://github.com/lcheung90>`_
