@@ -17,3 +17,4 @@ List of contributors:
 - `hughdbrown <https://github.com/hughdbrown>`_
 - `utsavgupta <https://github.com/utsavgupta>`_
 - `skirkpatrick <https://github.com/skirkpatrick>`_
+- `conanchou <https://github.com/ConanChou>`_
