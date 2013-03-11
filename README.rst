@@ -29,6 +29,7 @@ Algorithms implemented so far:
 - Boyer-Moore-Horspool
 - Knuth-Morris-Pratt
 - Rabin-Karp
+- Depth First Search (Recursive)
 
 **Shuffling:**
 
