@@ -29,12 +29,9 @@ class TestExtendedGCD(unittest.TestCase):
 
 class TestLCM(unittest.TestCase):
     def test_lcm(self):
-        # Find lcm of 16 and 20
-        r = lcm(16, 20)
-        self.assertEqual(80, abs(r))
-
-        # Find lcm for 20 and 16
-        r2 = lcm(20, 16)
+        # Find lcm of (16, 20) and (20, 16)
+        r, r2 = lcm(16, 20), lcm(20, 16)
+        self.assertEqual(r, 80)
 
         # Checks that lcm function is commutative
         self.assertEqual(r, r2)
