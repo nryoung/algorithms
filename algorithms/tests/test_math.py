@@ -1,5 +1,6 @@
 import unittest
 from ..math.extended_gcd import extended_gcd
+from ..math.lcm import lcm
 
 
 class TestExtendedGCD(unittest.TestCase):
@@ -24,3 +25,16 @@ class TestExtendedGCD(unittest.TestCase):
         # Find extended_gcd of 50 and 15
         (a, b) = extended_gcd(50, 15)
         self.assertIs(50 * a + 15 * b, 5)
+
+
+class TestLCM(unittest.TestCase):
+    def test_lcm(self):
+        # Find lcm of 16 and 20
+        r = lcm(16, 20)
+        self.assertEqual(80, abs(r))
+
+        # Find lcm for 20 and 16
+        r2 = lcm(20, 16)
+
+        # Checks that lcm function is commutative
+        self.assertEqual(r, r2)
