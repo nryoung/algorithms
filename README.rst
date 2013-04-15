@@ -48,12 +48,13 @@ Algorithms implemented so far:
 Installation:
 -------------
 
-To install, simply
+If you want to use the algorithms directly, simply
 
 ::
 
     $ pip install algorithms
 
+If you want to examine the algorithms source, then you should clone this repo.
 
 Usage:
 ------
