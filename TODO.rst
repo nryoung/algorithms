@@ -4,7 +4,6 @@ TODO:
 Below is an ever changing list of things that I would like to accomplish or implement. If you feel something needs to be added simply do a pull request.
 
 **Algorithms to implement:**
-    - Mersenne Twister
     - UUID Generator
     - Bloom Filters
     - Sorting
