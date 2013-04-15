@@ -20,6 +20,7 @@ Algorithms implemented so far:
 - Insertion Sort
 - Merge Sort
 - Quick Sort
+- In Place Quick Sort
 - Selection Sort
 - Shell Sort
 
