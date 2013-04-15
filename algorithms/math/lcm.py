@@ -1,9 +1,8 @@
-from extended_gcd import extended_gcd
-
-
 def lcm(a, b):
     """
-    Returns LCM based on GCD of digit.
+    Simple version of lcm, that does not have any dependencies
     """
-    x, y = extended_gcd(a, b)
-    return a * b / (a * x + b * y)
+    tmp_a = a
+    while (tmp_a % b) != 0:
+        tmp_a += a
+    return tmp_a
