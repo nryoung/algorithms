@@ -1,5 +1,6 @@
 import unittest
 from ..math.extended_gcd import extended_gcd
+from ..math.sieve_eratosthenes import eratosthenes
 
 
 class TestExtendedGCD(unittest.TestCase):
@@ -24,3 +25,15 @@ class TestExtendedGCD(unittest.TestCase):
         # Find extended_gcd of 50 and 15
         (a, b) = extended_gcd(50, 15)
         self.assertIs(50 * a + 15 * b, 5)
+
+class TestSieveOfEratosthenes(unittest.TestCase):
+
+    def test_eratosthenes(self):
+        rv1 = eratosthenes(-10)
+        rv2 = eratosthenes(10)
+        rv3 = eratosthenes(100,5)
+        rv4 = eratosthenes(100,-10)
+        self.assertEqual(rv1,[])
+        self.assertEqual(rv2,[2, 3, 5, 7])
+        self.assertEqual(rv3,[5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+        self.assertEqual(rv4,[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
