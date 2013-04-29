@@ -3,7 +3,7 @@
 
     Implementation of the Sieve of Eratosthenes algorithm.
 
-    Depth First Search Overview:
+    Sieve of Eratosthenes Overview:
     ------------------------
     Is a simple, ancient algorithm for finding all prime numbers 
     up to any given limit. It does so by iteratively marking as composite (i.e. not prime) 
