@@ -21,14 +21,11 @@
 def sort(seq):
 
     for i in range(0, len(seq)):
-        minat = i
-        minum = seq[i]
-        for j in range(i + 1, len(seq)):
-            if minum > seq[j]:
-                minat = j
-                minum = seq[j]
-        temp = seq[i]
-        seq[i] = seq[minat]
-        seq[minat] = temp
+        iMin = i
+        for j in range(i+1, len(seq)):
+            if seq[iMin] > seq[j]:
+                iMin = j
+        if i != iMin:
+            seq[i], seq[iMin] = seq[iMin], seq[i]
 
     return seq
