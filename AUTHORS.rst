@@ -19,3 +19,5 @@ List of contributors:
 - `skirkpatrick <https://github.com/skirkpatrick>`_
 - `conanchou <https://github.com/ConanChou>`_
 - `lcheung90 <https://github.com/lcheung90>`_
+- `rasbt <https://github.com/rasbt>`_
+

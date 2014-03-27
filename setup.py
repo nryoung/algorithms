@@ -16,4 +16,6 @@ setup(name='algorithms',
       license='BSD',
       packages=['algorithms', 'algorithms.sorting', 'algorithms.shuffling',
           'algorithms.searching', 'algorithms.math', 'algorithms.tests'],
+      classifiers=[
+          'Programming Language :: Python :: 2.7',],
       zip_safe=False)
