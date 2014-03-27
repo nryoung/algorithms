@@ -39,6 +39,8 @@ Algorithms implemented so far:
 **Math:**
 
 - Extended GCD
+- Standard Normal Probability Density Function
+- Cumulative Density Function (Approximation; 16 digit precision for 300 iter.)
 
 **Random:**
 

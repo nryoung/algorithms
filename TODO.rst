@@ -54,6 +54,13 @@ Below is an ever changing list of things that I would like to accomplish or impl
     - Primality Testing
     - Integer Factorization
     - Closest Pair of Points
+    - Feature Subset Search Algorithms
+        - Sequential Search Algorithms
+            - Sequential Forward Selection (SBS)
+            - Sequential Backward Selection (SFS)
+            - 'plus l take away r' - algorithm (SBS + SFS)
+            - Sequential Floating Forward Algorithm (SFFS)
+            
 
 
 **Misc.:**
