@@ -1,6 +1,7 @@
 import unittest
 from ..math.extended_gcd import extended_gcd
 from ..math.lcm import lcm
+from ..math.sieve_eratosthenes import eratosthenes
 
 
 class TestExtendedGCD(unittest.TestCase):
@@ -35,3 +36,16 @@ class TestLCM(unittest.TestCase):
 
         # Checks that lcm function is commutative
         self.assertEqual(r, r2)
+
+
+class TestSieveOfEratosthenes(unittest.TestCase):
+
+    def test_eratosthenes(self):
+        rv1 = eratosthenes(-10)
+        rv2 = eratosthenes(10)
+        rv3 = eratosthenes(100,5)
+        rv4 = eratosthenes(100,-10)
+        self.assertEqual(rv1,[])
+        self.assertEqual(rv2,[2, 3, 5, 7])
+        self.assertEqual(rv3,[5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+        self.assertEqual(rv4,[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
