@@ -17,6 +17,7 @@
     Psuedo Code: http://en.wikipedia.org/wiki/Quicksort#In-place_version
 
 """
+from random import randrange
 
 def partition(seq, left, right, pivot_index):
     pivot_value = seq[pivot_index]
@@ -31,7 +32,6 @@ def partition(seq, left, right, pivot_index):
 
 def sort(seq, left, right):
     """in-place version of quicksort"""
-    from random import randrange
     if len(seq) <= 1:
         return seq
     elif left < right:
