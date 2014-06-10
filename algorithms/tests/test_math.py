@@ -1,9 +1,11 @@
 import unittest
+import nose
 from ..math.extended_gcd import extended_gcd
 from ..math.lcm import lcm
 from ..math.sieve_eratosthenes import eratosthenes
 from ..math.sieve_atkin import atkin
-
+from ..math.std_normal_pdf import pdf
+from ..math.approx_cdf import cdf
 
 class TestExtendedGCD(unittest.TestCase):
 
@@ -70,3 +72,35 @@ class TestSieveOfAtkin(unittest.TestCase):
                               739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 
                               881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997])
         self.assertEqual(rv4,[])
+
+
+class TestStdNormPDF(unittest.TestCase):
+
+    def test_pdf(self):
+        # Calculate standard normal pdf for x=1
+        a = pdf(1)
+        nose.tools.assert_almost_equal(a, 0.24197072451914337)
+
+        # Calculate standard normal pdf for x=(-1)
+        a = pdf(-1)
+        nose.tools.assert_almost_equal(a, 0.24197072451914337)
+
+        # Calculate standard normal pdf for x=13, mean=10, std_dev=1
+        a = pdf(x=13, mean=10, std_dev=1)
+        nose.tools.assert_almost_equal(a, 0.004431848411938008)
+
+
+class TestApproxCdf(unittest.TestCase):
+
+    def test_cdf(self):
+        # Calculate cumulative distribution function for x=1
+        a = cdf(1)
+        nose.tools.assert_almost_equal(a, 0.841344746068543)
+
+        # Calculate cumulative distribution function x=0
+        a = cdf(0)
+        nose.tools.assert_almost_equal(a, 0.5)
+
+        # Calculate cumulative distribution function for x=(-1)
+        a = cdf(-1)
+        nose.tools.assert_almost_equal(a, 0.15865525393145702)
