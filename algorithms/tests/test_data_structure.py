@@ -13,7 +13,7 @@ class TestStack(unittest.TestCase):
         self.sta.add(2)
 
         self.assertEqual(self.sta.remove(),2)
-        self.assertEqual(self.sta.is_empty(),0)
+        self.assertEqual(self.sta.is_empty(),False)
         self.assertEqual(self.sta.size(),3)
         
 class TestQueue(unittest.TestCase):
@@ -34,4 +34,4 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(self.que.remove(),8)
         self.assertEqual(self.que.remove(),5)
         self.assertEqual(self.que.remove(),6)
-        self.assertEqual(self.que.is_empty(),1)
+        self.assertEqual(self.que.is_empty(),True)

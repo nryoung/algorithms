@@ -21,9 +21,9 @@ class stack :
         return self.stack_list.pop()
     def is_empty(self):
         if not len(self.stack_list):
-            return 1 
+            return True 
         else :
-            return 0
+            return False
     def size(self):
         return len(self.stack_list)
 
