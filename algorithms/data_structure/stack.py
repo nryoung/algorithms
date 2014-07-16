@@ -20,10 +20,7 @@ class stack :
     def remove(self):
         return self.stack_list.pop()
     def is_empty(self):
-        if not len(self.stack_list):
-            return True 
-        else :
-            return False
+        return not len(self.stack_list)
     def size(self):
         return len(self.stack_list)
 

@@ -22,10 +22,7 @@ class queue :
     def remove(self):
         return self.queue_list.popleft()
     def is_empty(self):
-        if not len(self.queue_list):
-            return True 
-        else :
-            return False
+        return not len(self.queue_list)
     def size(self):
         return len(self.queue_list)
 
