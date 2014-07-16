@@ -23,6 +23,7 @@ Algorithms implemented so far:
 - In Place Quick Sort
 - Selection Sort
 - Shell Sort
+- Gnome Sort
 
 **Searching:**
 
