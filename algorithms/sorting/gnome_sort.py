@@ -21,13 +21,19 @@
 def sort(seq):
 
     i = 1
+    last = 0
     while i < len(seq):
         if seq[i] < seq[i-1]:
             seq[i], seq[i-1] = seq[i-1], seq[i]
             if i > 1:
+                if last == 0:
+                    last = i
                 i -= 1
+            else:
+                i += 1
         else:
+            if last != 0:
+                i = last
+                last = 0
             i += 1
     return seq
-
-print sort([11, 14, 11, -1, 24, -12343, -0.34, 123.22, 12, 14, 23,33])
