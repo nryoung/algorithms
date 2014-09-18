@@ -18,7 +18,7 @@
 """
 
 
-def eratosthenes(end, start=2):
+def eratosthenes(end, start=2, return_boolean=False):
     primes = []
     if end < start or end < 2:
         return []
@@ -33,4 +33,6 @@ def eratosthenes(end, start=2):
         while j <= end:
             is_prime[j] = False
             j += i
+    if return_boolean:
+        return primes, is_prime
     return primes
