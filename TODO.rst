@@ -18,8 +18,6 @@ Below is an ever changing list of things that I would like to accomplish or impl
         - Strassen's Matrix Multiplication
     - *k*-Selection (Minimum, Maximum, Median, Arbitrary *k*)
     - Data Structures
-        - Stacks
-        - Queues
         - Linked Lists
         - Hash Tables
         - Binary Search Trees
