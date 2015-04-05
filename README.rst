@@ -10,6 +10,11 @@ I used psuedo code from various sources and I have listed them as references in 
 Algorithms implemented so far:
 ------------------------------
 
+**Data Structures:**
+
+- Queue
+- Stack
+
 **Sorting:**
 
 - Bogo Sort
@@ -76,7 +81,7 @@ All prequisites for the algorithms are listed in the source code for each algori
 Tests:
 ------
 
-Nose is used as the main test runner and all Unit Tests can be run by: 
+Nose is used as the main test runner and all Unit Tests can be run by:
 
 ::
 

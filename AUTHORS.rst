@@ -20,4 +20,5 @@ List of contributors:
 - `conanchou <https://github.com/ConanChou>`_
 - `lcheung90 <https://github.com/lcheung90>`_
 - `rasbt <https://github.com/rasbt>`_
-
+- `JoaoGFarias <https://github.com/JoaoGFarias>`_
+- `kabrapratik28 <https://github.com/kabrapratik28>`_
