@@ -12,7 +12,6 @@ Below is an ever changing list of things that I would like to accomplish or impl
         - Cycle Sort
         - Smoothsort
         - Strand Sort
-        - Gnome Sort
     - Divide and Conquer
         - Maximum Subarray
         - Strassen's Matrix Multiplication

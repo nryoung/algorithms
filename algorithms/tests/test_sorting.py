@@ -2,7 +2,7 @@ import random
 import unittest
 from ..sorting import bubble_sort, selection_sort, insertion_sort, \
     merge_sort, quick_sort, heap_sort, shell_sort, comb_sort, cocktail_sort, \
-    quick_sort_in_place
+    quick_sort_in_place, gnome_sort
 
 
 class SortingAlgorithmTestCase(unittest.TestCase):
@@ -127,4 +127,14 @@ class TestCocktailSort(SortingAlgorithmTestCase):
 
     def test_cocktailsort(self):
         self.output = cocktail_sort.sort(self.input)
+        self.assertEqual(self.correct, self.output)
+
+
+class TestGnomeSort(SortingAlgorithmTestCase):
+    """
+    Tests Gnome sort on a small range from 0-9
+    """
+
+    def test_gnomesort(self):
+        self.output = gnome_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
