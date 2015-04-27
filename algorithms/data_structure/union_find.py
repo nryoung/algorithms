@@ -49,9 +49,7 @@ class UnionFind:
     def is_connected(self, x, y):
         self.__validate_ele(x)
         self.__validate_ele(y)
-        if self.find(x) == self.find(y):
-            return True
-        return False
+        return self.find(x) == self.find(y)
 
     def __validate_ele(self, x):
         if type(x) != int:
