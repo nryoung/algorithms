@@ -9,7 +9,7 @@
     Navie approach:
         Find follows parent nodes until it reaches the root.
         Union combines two trees into one by attaching the root of one to the root of the other
-    Time Complexity  :  O(N) (a highly unbalanced tree might be created)
+    Time Complexity  :  O(N) (a highly unbalanced tree might be created, nothing better a linked-list)
     Psuedo Code: http://en.wikipedia.org/wiki/Disjoint-set_data_structure
 """
 class UnionFind:
@@ -17,37 +17,39 @@ class UnionFind:
         if type(N) != int:
             raise TypeError, "size must be integer"
         if N < 0:
-            raise ValueError, "N is not a negative integer"
+            raise ValueError, "N cannot be a negative integer"
         self.forests = []
         self.N  = N
         for i in range(0, N):
             self.forests.append(i)
+        print self.forests
 
     def make_set(self, x):
         if type(x) != int:
             raise TypeError, "x must be integer"
         if x != self.N:
             raise ValueError, "a new element must have index {0} since the total num of elements is {0}".format(self.N)
-        self.forests[x] = x
+        self.forests.append(x)
+        self.N = self.N + 1
 
     def union(self, x, y):
         self.__validate_ele(x)
         self.__validate_ele(y)
-        x_root = find(x)
-        y_root = find(y)
+        x_root = self.find(x)
+        y_root = self.find(y)
         self.forests[x_root] = y_root
 
     def find(self, x):
         self.__validate_ele(x)
-        if self.forest[x] == x:
+        if self.forests[x] == x:
             return x
         else:
-            return find(x)
+            return self.find(self.forests[x])
 
     def is_connected(self, x, y):
         self.__validate_ele(x)
         self.__validate_ele(y)
-        if find(x) == find(y):
+        if self.find(x) == self.find(y):
             return True
         return False
 

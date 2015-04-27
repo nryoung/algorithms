@@ -1,5 +1,5 @@
 import unittest
-from ..data_structure import stack,queue
+from ..data_structure import stack,queue,union_find
 
 class TestStack(unittest.TestCase):
     """
@@ -35,3 +35,18 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(self.que.remove(),5)
         self.assertEqual(self.que.remove(),6)
         self.assertEqual(self.que.is_empty(),True)
+
+class TestUnionFind(unittest.TestCase):
+    """
+    Test Union Find Implementation
+    """
+    def test_union_find(self):
+        self.uf = union_find.UnionFind(4)
+        self.uf.make_set(4)
+        self.uf.union(1, 0)
+        self.uf.union(3, 4)
+
+        self.assertEqual(self.uf.find(1), 0)
+        self.assertEqual(self.uf.find(3), 4)
+        self.assertEqual(self.uf.is_connected(0, 1), True)
+        self.assertEqual(self.uf.is_connected(3, 4), True)
