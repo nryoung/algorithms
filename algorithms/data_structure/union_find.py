@@ -22,7 +22,6 @@ class UnionFind:
         self.N  = N
         for i in range(0, N):
             self.forests.append(i)
-        print self.forests
 
     def make_set(self, x):
         if type(x) != int:
