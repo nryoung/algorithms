@@ -2,10 +2,13 @@ Development Lead:
 -----------------
 
 - `Nic Young <https://github.com/nryoung>`_
+- `JoaoGFarias <https://github.com/JoaoGFarias>`_
 
 List of contributors:
 --------------------
 
+- `dotslash <https://github.com/dotslash>`_
+- `travistrle <https://github.com/travistrle>`_
 - `jxtcman <https://github.com/jxtcman>`_
 - `derv82 <https://github.com/derv82>`_
 - `ppinette <https://github.com/ppinette>`_

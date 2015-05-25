@@ -14,6 +14,7 @@ Algorithms implemented so far:
 
 - Queue
 - Stack
+- Disjoint Set
 
 **Sorting:**
 
@@ -47,7 +48,7 @@ Algorithms implemented so far:
 - Extended GCD
 - Standard Normal Probability Density Function
 - Cumulative Density Function (Approximation; 16 digit precision for 300 iter.)
-
+- Sieve of Eratosthenes
 **Random:**
 
 - Mersenne Twister
