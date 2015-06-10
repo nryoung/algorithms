@@ -1,5 +1,5 @@
 import unittest
-from ..data_structure import stack,queue,union_find,union_find_by_rank,union_find_with_path_compression
+from ..data_structure import stack,queue,union_find,union_find_by_rank,union_find_with_path_compression,singly_linked_list
 
 class TestStack(unittest.TestCase):
     """
@@ -100,4 +100,25 @@ class TestUnionFindWithPathCompression(unittest.TestCase):
         self.assertEqual(self.uf.parent(3), 0)
 
         self.assertEqual(self.uf.is_connected(3, 5), True)
+
+class TestSinglyLinkedList(unittest.TestCase):
+    """
+    Test Singly Linked List Implementation
+    """
+
+    def test_singly_linked_list(self):
+        self.sl = singly_linked_list.SinglyLinkedList()
+        self.sl.add(10)
+        self.sl.add(5)
+        self.sl.add(30)
+        self.sl.remove(30)
+
+        self.assertEqual(self.sl.size, 2)
+        self.assertEqual(self.sl.search(30), False)
+        self.assertEqual(self.sl.search(5),True)
+        self.assertEqual(self.sl.search(10), True)
+        self.assertEqual(self.sl.remove(5), True)
+        self.assertEqual(self.sl.remove(10), True)
+        self.assertEqual(self.sl.size, 0)
+
 
