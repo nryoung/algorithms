@@ -7,7 +7,7 @@
   It supports the following two primary operations: 
   add_edge: add an edge to the graph O(1)
   adj: return list of all of the vertices adjacent to a vertex O(1)
-  vertices: return list of all vertices in the graph O(N)
+  vertices: return list of all vertices in the graph O(V)
 
   It also supports the followign secondary operations:
   vertex_count: return the number of vertices O(1)
