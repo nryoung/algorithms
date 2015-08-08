@@ -1,7 +1,7 @@
 """
   Directed Graph data structure implemented:
   --------------------------------------------
-  The Directed_Graph class represents an undirected graph of vertices
+  The Digraph class represents a directed graph of vertices
   which can be any hashable value.
   
   It supports the following two primary operations: 
@@ -9,18 +9,18 @@
   adj: return list of all of the vertices adjacent to a vertex O(1)
   vertices: return list of all vertices in the graph O(V)
 
-  It also supports the followign secondary operations:
+  It also supports the following secondary operations:
   vertex_count: return the number of vertices O(1)
   edge_count: return the number of edges O(1)
   degree: return degree of the vertex O(1)
-  reverse: return a reversed version of the digraph O (V*E)
+  reverse: return a reversed version of the digraph O(V+E)
   
   Parallel edges and self-loops are permitted.
 
-  Adapted from: http://algs4.cs.princeton.edu/41undirected/Graph.java.html
+  Adapted from: http://algs4.cs.princeton.edu/42directed/Digraph.java.html
  """
 
-class Digraph :
+class Digraph() :
   def __init__(self):
     self.__adj = {}
     self.__v_count = 0
@@ -80,17 +80,17 @@ class Digraph :
     """
     return self.__adj.keys()
 
-    def reverse(self):
-      """
-      Returns the reverse of this digraph
-      """
-      digraph_reversed = Digraph()
-      old_vertices = self.vertices()
+  def reverse(self):
+    """
+    Returns the reverse of this digraph
+    """
+    digraph_reversed = Digraph()
+    old_vertices = self.vertices()
 
-      for src in old_vertices:
-        for dest in old_vertices.adj(src):
-          digraph_reversed.add_edge(dest, src)
-      return digraph_reversed;
+    for src in old_vertices:
+      for dest in self.adj(src):
+        digraph_reversed.add_edge(dest, src)
+    return digraph_reversed;
     
 
   def __str__(self):

@@ -116,6 +116,8 @@ class TestDirectedGraph(unittest.TestCase):
 
         # populating
         self.dg1.add_edge(1, 2)
+
+        self.dg1_rev = self.dg1.reverse() # reverse
         
         self.dg2.add_edge(1,2)
         self.dg2.add_edge(1,2)
@@ -129,6 +131,11 @@ class TestDirectedGraph(unittest.TestCase):
         self.assertEqual(len(self.dg1.adj(1)), 1)
         self.assertTrue(1 not in self.dg1.adj(2))
         self.assertEqual(len(self.dg1.adj(2)), 0)
+
+        self.assertTrue(1 in self.dg1_rev.adj(2))
+        self.assertEqual(len(self.dg1_rev.adj(2)), 1)
+        self.assertTrue(2 not in self.dg1_rev.adj(1))
+        self.assertEqual(len(self.dg1_rev.adj(1)), 0)
 
         self.assertTrue(2 in self.dg2.adj(1))
         self.assertEqual(len(self.dg2.adj(1)), 2)
@@ -146,8 +153,13 @@ class TestDirectedGraph(unittest.TestCase):
         # test degree
         self.assertEqual(self.dg1.outdegree(1), 1)
         self.assertEqual(self.dg1.outdegree(2), 0)
+
+        self.assertEqual(self.dg1_rev.outdegree(2), 1)
+        self.assertEqual(self.dg1_rev.outdegree(1), 0)
+
         self.assertEqual(self.dg2.outdegree(1), 2)
         self.assertEqual(self.dg2.outdegree(2), 0)
+
         self.assertEqual(self.dg3.outdegree(1), 2)
         self.assertEqual(self.dg3.outdegree(2), 0)
         self.assertEqual(self.dg3.outdegree(3), 1)
@@ -159,6 +171,10 @@ class TestDirectedGraph(unittest.TestCase):
         self.assertTrue(1 in self.dg1.vertices())
         self.assertTrue(2 in self.dg1.vertices())
         self.assertEqual(len(self.dg1.vertices()), 2)
+
+        self.assertTrue(2 in self.dg1_rev.vertices())
+        self.assertTrue(1 in self.dg1_rev.vertices())
+        self.assertEqual(len(self.dg1_rev.vertices()), 2)
 
         self.assertTrue(1 in self.dg2.vertices())
         self.assertTrue(2 in self.dg2.vertices())
@@ -172,15 +188,13 @@ class TestDirectedGraph(unittest.TestCase):
         # test vertex_count
         self.assertEqual(self.dg0.vertex_count(), 0)
         self.assertEqual(self.dg1.vertex_count(), 2)
+        self.assertEqual(self.dg1_rev.vertex_count(), 2)
         self.assertEqual(self.dg2.vertex_count(), 2)
         self.assertEqual(self.dg3.vertex_count(), 3)
         
         # test edge_count
         self.assertEqual(self.dg0.edge_count(), 0)
         self.assertEqual(self.dg1.edge_count(), 1)
+        self.assertEqual(self.dg1_rev.edge_count(), 1)
         self.assertEqual(self.dg2.edge_count(), 2)
         self.assertEqual(self.dg3.edge_count(), 3)
-
-        print(self.dg1)
-
-
