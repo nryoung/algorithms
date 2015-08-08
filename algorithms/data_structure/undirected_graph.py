@@ -81,8 +81,8 @@ class Undirected_Graph :
 
   def __str__(self):
     s = []
-    s.append("{0} vertices and {1} edges \n".format(self.__vertex_count, 
-                                                    self.__edge_count))
+    s.append("{0} vertices and {1} edges \n".format(self.__v_count, 
+                                                    self.__e_count))
     for key in self.vertices():
       s.append("{0}: ".format(key))
       for val in self.adj(key):
