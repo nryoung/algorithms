@@ -15,6 +15,9 @@ Algorithms implemented so far:
 - Queue
 - Stack
 - Disjoint Set
+- Single Linked List
+- Undirected Graph
+- Digraph
 
 **Sorting:**
 

@@ -25,3 +25,5 @@ List of contributors:
 - `rasbt <https://github.com/rasbt>`_
 - `JoaoGFarias <https://github.com/JoaoGFarias>`_
 - `kabrapratik28 <https://github.com/kabrapratik28>`_
+- `JulianGriggs <https://github.com/JulianGriggs>`_
+- `oprblackout <https://github.com/oprblackout>`_
