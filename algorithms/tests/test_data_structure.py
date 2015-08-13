@@ -1,5 +1,6 @@
 import unittest
-from ..data_structure import stack,queue,union_find,union_find_by_rank,union_find_with_path_compression,singly_linked_list, undirected_graph
+
+from ..data_structure import stack,queue,union_find,union_find_by_rank,union_find_with_path_compression,digraph,singly_linked_list, undirected_graph
 
 class TestStack(unittest.TestCase):
     """
@@ -199,3 +200,100 @@ class TestUndirectedGraph(unittest.TestCase):
         self.assertEqual(self.ug1.edge_count(), 1)
         self.assertEqual(self.ug2.edge_count(), 2)
         self.assertEqual(self.ug3.edge_count(), 3)
+
+class TestDirectedGraph(unittest.TestCase):
+    """
+    Test Undirected Graph Implementation
+    """
+    def test_directed_graph(self):
+
+        # init
+        self.dg0 = digraph.Digraph()
+        self.dg1 = digraph.Digraph()
+        self.dg2 = digraph.Digraph()
+        self.dg3 = digraph.Digraph()
+
+        # populating
+        self.dg1.add_edge(1, 2)
+
+        self.dg1_rev = self.dg1.reverse() # reverse
+
+        self.dg2.add_edge(1,2)
+        self.dg2.add_edge(1,2)
+
+        self.dg3.add_edge(1,2)
+        self.dg3.add_edge(1,2)
+        self.dg3.add_edge(3,1)
+
+        # test adj
+        self.assertTrue(2 in self.dg1.adj(1))
+        self.assertEqual(len(self.dg1.adj(1)), 1)
+        self.assertTrue(1 not in self.dg1.adj(2))
+        self.assertEqual(len(self.dg1.adj(2)), 0)
+
+        self.assertTrue(1 in self.dg1_rev.adj(2))
+        self.assertEqual(len(self.dg1_rev.adj(2)), 1)
+        self.assertTrue(2 not in self.dg1_rev.adj(1))
+        self.assertEqual(len(self.dg1_rev.adj(1)), 0)
+
+        self.assertTrue(2 in self.dg2.adj(1))
+        self.assertEqual(len(self.dg2.adj(1)), 2)
+        self.assertTrue(1 not in self.dg2.adj(2))
+        self.assertEqual(len(self.dg2.adj(2)), 0)
+
+        self.assertTrue(2 in self.dg3.adj(1))
+        self.assertTrue(1 in self.dg3.adj(3))
+        self.assertEqual(len(self.dg3.adj(1)), 2)
+        self.assertTrue(1 not in self.dg3.adj(2))
+        self.assertEqual(len(self.dg3.adj(2)), 0)
+        self.assertTrue(3 not in self.dg3.adj(1))
+        self.assertEqual(len(self.dg3.adj(3)), 1)
+
+        # test degree
+        self.assertEqual(self.dg1.outdegree(1), 1)
+        self.assertEqual(self.dg1.outdegree(2), 0)
+
+        self.assertEqual(self.dg1_rev.outdegree(2), 1)
+        self.assertEqual(self.dg1_rev.outdegree(1), 0)
+
+        self.assertEqual(self.dg2.outdegree(1), 2)
+        self.assertEqual(self.dg2.outdegree(2), 0)
+
+        self.assertEqual(self.dg3.outdegree(1), 2)
+        self.assertEqual(self.dg3.outdegree(2), 0)
+        self.assertEqual(self.dg3.outdegree(3), 1)
+
+        # test vertices
+        self.assertEqual(self.dg0.vertices(), [])
+        self.assertEqual(len(self.dg0.vertices()), 0)
+
+        self.assertTrue(1 in self.dg1.vertices())
+        self.assertTrue(2 in self.dg1.vertices())
+        self.assertEqual(len(self.dg1.vertices()), 2)
+
+        self.assertTrue(2 in self.dg1_rev.vertices())
+        self.assertTrue(1 in self.dg1_rev.vertices())
+        self.assertEqual(len(self.dg1_rev.vertices()), 2)
+
+        self.assertTrue(1 in self.dg2.vertices())
+        self.assertTrue(2 in self.dg2.vertices())
+        self.assertEqual(len(self.dg2.vertices()), 2)
+
+        self.assertTrue(1 in self.dg3.vertices())
+        self.assertTrue(2 in self.dg3.vertices())
+        self.assertTrue(3 in self.dg3.vertices())
+        self.assertEqual(len(self.dg3.vertices()), 3)
+
+        # test vertex_count
+        self.assertEqual(self.dg0.vertex_count(), 0)
+        self.assertEqual(self.dg1.vertex_count(), 2)
+        self.assertEqual(self.dg1_rev.vertex_count(), 2)
+        self.assertEqual(self.dg2.vertex_count(), 2)
+        self.assertEqual(self.dg3.vertex_count(), 3)
+
+        # test edge_count
+        self.assertEqual(self.dg0.edge_count(), 0)
+        self.assertEqual(self.dg1.edge_count(), 1)
+        self.assertEqual(self.dg1_rev.edge_count(), 1)
+        self.assertEqual(self.dg2.edge_count(), 2)
+        self.assertEqual(self.dg3.edge_count(), 3)
