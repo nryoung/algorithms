@@ -1,5 +1,5 @@
 import unittest
-from ..data_structure import stack,queue,union_find,union_find_by_rank,union_find_with_path_compression,singly_linked_list
+from ..data_structure import stack,queue,union_find,union_find_by_rank,union_find_with_path_compression,singly_linked_list, undirected_graph
 
 class TestStack(unittest.TestCase):
     """
@@ -15,7 +15,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(self.sta.remove(),2)
         self.assertEqual(self.sta.is_empty(),False)
         self.assertEqual(self.sta.size(),3)
-        
+
 class TestQueue(unittest.TestCase):
     """
     Test Queue Implementation
@@ -121,4 +121,81 @@ class TestSinglyLinkedList(unittest.TestCase):
         self.assertEqual(self.sl.remove(10), True)
         self.assertEqual(self.sl.size, 0)
 
+class TestUndirectedGraph(unittest.TestCase):
+    """
+    Test Undirected Graph Implementation
+    """
+    def test_undirected_graph(self):
 
+        # init
+        self.ug0 = undirected_graph.Undirected_Graph()
+        self.ug1 = undirected_graph.Undirected_Graph()
+        self.ug2 = undirected_graph.Undirected_Graph()
+        self.ug3 = undirected_graph.Undirected_Graph()
+
+        # populating
+        self.ug1.add_edge(1, 2)
+
+        self.ug2.add_edge(1,2)
+        self.ug2.add_edge(1,2)
+
+        self.ug3.add_edge(1,2)
+        self.ug3.add_edge(1,2)
+        self.ug3.add_edge(3,1)
+
+        # test adj
+        self.assertTrue(2 in self.ug1.adj(1))
+        self.assertEqual(len(self.ug1.adj(1)), 1)
+        self.assertTrue(1 in self.ug1.adj(2))
+        self.assertEqual(len(self.ug1.adj(1)), 1)
+
+        self.assertTrue(2 in self.ug2.adj(1))
+        self.assertEqual(len(self.ug2.adj(1)), 2)
+        self.assertTrue(1 in self.ug2.adj(2))
+        self.assertEqual(len(self.ug2.adj(1)), 2)
+
+        self.assertTrue(2 in self.ug3.adj(1))
+        self.assertTrue(3 in self.ug3.adj(1))
+        self.assertEqual(len(self.ug3.adj(1)), 3)
+        self.assertTrue(1 in self.ug3.adj(2))
+        self.assertEqual(len(self.ug3.adj(2)), 2)
+        self.assertTrue(1 in self.ug3.adj(3))
+        self.assertEqual(len(self.ug3.adj(3)), 1)
+
+        # test degree
+        self.assertEqual(self.ug1.degree(1), 1)
+        self.assertEqual(self.ug1.degree(2), 1)
+        self.assertEqual(self.ug2.degree(1), 2)
+        self.assertEqual(self.ug2.degree(2), 2)
+        self.assertEqual(self.ug3.degree(1), 3)
+        self.assertEqual(self.ug3.degree(2), 2)
+        self.assertEqual(self.ug3.degree(3), 1)
+
+        # test vertices
+        self.assertEqual(self.ug0.vertices(), [])
+        self.assertEqual(len(self.ug0.vertices()), 0)
+
+        self.assertTrue(1 in self.ug1.vertices())
+        self.assertTrue(2 in self.ug1.vertices())
+        self.assertEqual(len(self.ug1.vertices()), 2)
+
+        self.assertTrue(1 in self.ug2.vertices())
+        self.assertTrue(2 in self.ug2.vertices())
+        self.assertEqual(len(self.ug2.vertices()), 2)
+
+        self.assertTrue(1 in self.ug3.vertices())
+        self.assertTrue(2 in self.ug3.vertices())
+        self.assertTrue(3 in self.ug3.vertices())
+        self.assertEqual(len(self.ug3.vertices()), 3)
+
+        # test vertex_count
+        self.assertEqual(self.ug0.vertex_count(), 0)
+        self.assertEqual(self.ug1.vertex_count(), 2)
+        self.assertEqual(self.ug2.vertex_count(), 2)
+        self.assertEqual(self.ug3.vertex_count(), 3)
+
+        # test edge_count
+        self.assertEqual(self.ug0.edge_count(), 0)
+        self.assertEqual(self.ug1.edge_count(), 1)
+        self.assertEqual(self.ug2.edge_count(), 2)
+        self.assertEqual(self.ug3.edge_count(), 3)
