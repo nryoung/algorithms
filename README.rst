@@ -52,6 +52,11 @@ Algorithms implemented so far:
 - Standard Normal Probability Density Function
 - Cumulative Density Function (Approximation; 16 digit precision for 300 iter.)
 - Sieve of Eratosthenes
+
++**Dynamic Programming:**
+
+- Longest Common Subsequence
+
 **Random:**
 
 - Mersenne Twister
@@ -106,8 +111,9 @@ I want to personally thank everybody that has contributed so far and your names 
 
 TODO:
 -----
+See `TODO.rst`_.
 
-See `TODO.rst`.
+.. _`TODO.rst`: TODO.rst
 
 
 License:

@@ -14,7 +14,7 @@ setup(name='algorithms',
       author='Nic Young',
       author_email='nryoung@gmail.com',
       license='BSD',
-      packages=['algorithms', 'algorithms.data_structure','algorithms.sorting', 'algorithms.shuffling',
+      packages=['algorithms', 'algorithms.data_structure', 'algorithms.dynamic_programming', 'algorithms.sorting', 'algorithms.shuffling',
           'algorithms.searching', 'algorithms.math', 'algorithms.tests'],
       classifiers=[
           'Programming Language :: Python :: 2.7',],
