@@ -25,7 +25,6 @@ Below is an ever changing list of things that I would like to accomplish or impl
         - van Emde Boas Trees
     - Dynamic Programming
         - Matrix-Chain Multiplication
-        - Longest Common Subsequence
     - Huffman Encoding
     - Graph Algorithms
         - Breadth-First Search
