@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/nryoung/algorithms.svg?branch=master
+    :target: https://travis-ci.org/nryoung/algorithms
+
 Algorithms
 ==========
 
