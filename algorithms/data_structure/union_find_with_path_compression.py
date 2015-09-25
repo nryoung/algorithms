@@ -15,9 +15,9 @@
 class UnionFindWithPathCompression:
     def __init__(self, N):
         if type(N) != int:
-            raise TypeError, "size must be integer"
+            raise TypeError("size must be integer")
         if N < 0:
-            raise ValueError, "N cannot be a negative integer"
+            raise ValueError("N cannot be a negative integer")
         self.__parent = []
         self.__rank = []
         self.__N  = N
@@ -27,9 +27,9 @@ class UnionFindWithPathCompression:
 
     def make_set(self, x):
         if type(x) != int:
-            raise TypeError, "x must be integer"
+            raise TypeError("x must be integer")
         if x != self.__N:
-            raise ValueError, "a new element must have index {0} since the total num of elements is {0}".format(self.__N)
+            raise ValueError("a new element must have index {0} since the total num of elements is {0}".format(self.__N))
         self.__parent.append(x)
         self.__rank.append(0)
         self.__N = self.__N + 1
@@ -73,7 +73,7 @@ class UnionFindWithPathCompression:
 
     def __validate_ele(self, x):
         if type(x) != int:
-            raise TypeError, "{0} is not an integer".format(x)
+            raise TypeError("{0} is not an integer".format(x))
         if x < 0 or x >= self.__N:
-            raise ValueError, "{0} is not in [0,{1})".format(x, self.__N)
+            raise ValueError("{0} is not in [0,{1})".format(x, self.__N))
 

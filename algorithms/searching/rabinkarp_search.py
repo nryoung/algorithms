@@ -19,13 +19,13 @@ from hashlib import md5
 
 def search(s, sub):
     n, m = len(s), len(sub)
-    hsub_digest = md5(sub).digest()
+    hsub_digest = md5(sub.encode('utf-8')).digest()
     offsets = []
     if m > n:
         return offsets
 
-    for i in xrange(n - m + 1):
-        if md5(s[i:i + m]).digest() == hsub_digest:
+    for i in range(n - m + 1):
+        if md5(s[i:i + m].encode('utf-8')).digest() == hsub_digest:
             if s[i:i + m] == sub:
                 offsets.append(i)
 

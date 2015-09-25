@@ -173,7 +173,7 @@ class TestUndirectedGraph(unittest.TestCase):
         self.assertEqual(self.ug3.degree(3), 1)
 
         # test vertices
-        self.assertEqual(self.ug0.vertices(), [])
+        self.assertEqual(list(self.ug0.vertices()), [])
         self.assertEqual(len(self.ug0.vertices()), 0)
 
         self.assertTrue(1 in self.ug1.vertices())
@@ -264,7 +264,7 @@ class TestDirectedGraph(unittest.TestCase):
         self.assertEqual(self.dg3.outdegree(3), 1)
 
         # test vertices
-        self.assertEqual(self.dg0.vertices(), [])
+        self.assertEqual(list(self.dg0.vertices()), [])
         self.assertEqual(len(self.dg0.vertices()), 0)
 
         self.assertTrue(1 in self.dg1.vertices())

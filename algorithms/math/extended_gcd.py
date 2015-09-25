@@ -27,7 +27,7 @@ def extended_gcd(p, q):
     y0 = 1
 
     while(b != 0):
-        quotient = a / b
+        quotient = a // b
         (a, b) = (b, a % b)
         (x1, x0) = (x0 - quotient * x1, x1)
         (y1, y0) = (y0 - quotient * y1, y1)

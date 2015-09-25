@@ -29,8 +29,8 @@ def atkin(limit):
     is_prime = [False] * (limit + 1)
     sqrt_limit = int(sqrt(limit)) + 1
     
-    for x in xrange(1,sqrt_limit):
-        for y in xrange(1,sqrt_limit):
+    for x in range(1,sqrt_limit):
+        for y in range(1,sqrt_limit):
             n = 4 * x ** 2 + y ** 2
             if n <= limit and (n % 12 == 1 or n % 12 == 5):
                 is_prime[n] = not is_prime[n]
@@ -41,11 +41,11 @@ def atkin(limit):
             if x > y and (n <= limit) and (n % 12 == 11):
                 is_prime[n] = not is_prime[n]
     
-    for index in xrange(5,sqrt_limit):
+    for index in range(5,sqrt_limit):
         if is_prime[index]:
-            for composite in xrange(index ** 2, limit, index ** 2):
+            for composite in range(index ** 2, limit, index ** 2):
                 is_prime[composite] = False
-    for index in xrange(7, limit):
+    for index in range(7, limit):
         if is_prime[index]:
             primes.append(index)
     return primes

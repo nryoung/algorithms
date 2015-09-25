@@ -35,4 +35,4 @@ def sort(seq):
 
 
 def is_sorted(seq):
-    return all(seq[i - 1] <= seq[i] for i in xrange(1, len(seq)))
+    return all(seq[i - 1] <= seq[i] for i in range(1, len(seq)))

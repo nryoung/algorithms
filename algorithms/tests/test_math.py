@@ -12,6 +12,7 @@ class TestExtendedGCD(unittest.TestCase):
     def test_extended_gcd(self):
         # Find extended_gcd of 35 and 77
         (a, b) = extended_gcd(35, 77)
+        print(a, b)
         self.assertIs(35 * a + 77 * b, 7)
 
         # Find extended_gcd of 15 and 19

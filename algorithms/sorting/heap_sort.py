@@ -36,7 +36,7 @@ def max_heapify(seq, i, n):
 
 def build_heap(seq):
     n = len(seq) - 1
-    for i in range(n/2, -1, -1):
+    for i in range(n//2, -1, -1):
         max_heapify(seq, i, n)
 
 
