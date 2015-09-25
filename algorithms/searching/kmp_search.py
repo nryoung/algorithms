@@ -40,7 +40,7 @@ def compute_prefix(word):
     prefix = [0] * word_length
     k = 0
 
-    for q in xrange(1, word_length):
+    for q in range(1, word_length):
         while k > 0 and word[k] != word[q]:
             k = prefix[k - 1]
 

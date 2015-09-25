@@ -22,9 +22,9 @@ def eratosthenes(end, start=2, return_boolean=False):
     primes = []
     if end < start or end < 2:
         return []
-    is_prime = [True for i in xrange(end + 1)]
+    is_prime = [True for i in range(end + 1)]
     is_prime[0] = is_prime[1] = False
-    for i in xrange(2, end + 1):
+    for i in range(2, end + 1):
         if not is_prime[i]:
             continue
         if start <= i <= end:

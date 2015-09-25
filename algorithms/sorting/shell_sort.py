@@ -20,7 +20,7 @@
 
 def sort(seq):
 
-    gaps = [x for x in range(len(seq) / 2, 0, -1)]
+    gaps = [x for x in range(len(seq) // 2, 0, -1)]
 
     for gap in gaps:
         for i in range(gap, len(seq)):
