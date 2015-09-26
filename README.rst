@@ -56,7 +56,7 @@ Algorithms implemented so far:
 - Cumulative Density Function (Approximation; 16 digit precision for 300 iter.)
 - Sieve of Eratosthenes
 
-+**Dynamic Programming:**
++ **Dynamic Programming:**
 
 - Longest Common Subsequence
 
