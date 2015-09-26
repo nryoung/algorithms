@@ -1,6 +1,7 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
-#Read in the README for the long description on PyPI
+
+# Read in the README for the long description on PyPI
 def long_description():
     with open('README.rst', 'r') as f:
         readme = unicode(f.read())
@@ -14,8 +15,11 @@ setup(name='algorithms',
       author='Nic Young',
       author_email='nryoung@gmail.com',
       license='BSD',
-      packages=['algorithms', 'algorithms.data_structure', 'algorithms.dynamic_programming', 'algorithms.sorting', 'algorithms.shuffling',
-          'algorithms.searching', 'algorithms.math', 'algorithms.tests'],
+      packages=find_packages(),
       classifiers=[
-          'Programming Language :: Python :: 2.7',],
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.4',
+          'Programming Language :: Python :: 3.5',
+          ],
       zip_safe=False)
