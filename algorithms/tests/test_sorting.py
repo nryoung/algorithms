@@ -1,8 +1,19 @@
 import random
 import unittest
-from ..sorting import bubble_sort, selection_sort, insertion_sort, \
-    merge_sort, quick_sort, heap_sort, shell_sort, comb_sort, cocktail_sort, \
-    quick_sort_in_place, gnome_sort
+
+from ..sorting import (
+    bubble_sort,
+    selection_sort,
+    insertion_sort,
+    merge_sort,
+    quick_sort,
+    heap_sort,
+    shell_sort,
+    comb_sort,
+    cocktail_sort,
+    quick_sort_in_place,
+    gnome_sort,
+)
 
 
 class SortingAlgorithmTestCase(unittest.TestCase):
@@ -80,14 +91,20 @@ class TestQuickSortInPlace(SortingAlgorithmTestCase):
     also tests partition function included in quick sort
     """
     def test_quicksort_in_place(self):
-        self.output = quick_sort_in_place.sort(self.input, 0,
-                len(self.input)-1)
+        self.output = quick_sort_in_place.sort(
+            self.input, 0,
+            len(self.input)-1
+        )
         self.assertEqual(self.correct, self.output)
 
     def test_partition(self):
         self.seq = list(range(10))
-        self.assertIs(quick_sort_in_place.partition(self.seq, 0,
-            len(self.seq)-1, 5), 5)
+        self.assertIs(
+            quick_sort_in_place.partition(
+                self.seq, 0,
+                len(self.seq)-1, 5),
+            5
+        )
 
 
 class TestHeapSort(SortingAlgorithmTestCase):

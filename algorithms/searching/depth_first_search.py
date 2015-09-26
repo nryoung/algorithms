@@ -13,13 +13,15 @@
         E = Number of edges
         V = Number of vertices (nodes)
 
-    Pseudocode: https://en.wikipedia.org/wiki/Depth-first_search    
+    Pseudocode: https://en.wikipedia.org/wiki/Depth-first_search
 """
-def dfs(graph,start,path = []):
-    if start not in graph or graph[start] == None or graph[start] == []:
+
+
+def dfs(graph, start, path=[]):
+    if start not in graph or graph[start] is None or graph[start] == []:
         return None
     path = path + [start]
     for edge in graph[start]:
         if edge not in path:
-            path = dfs(graph, edge,path)
+            path = dfs(graph, edge, path)
     return path

@@ -7,8 +7,10 @@
     Pre: two strings str1 and str2
     Post: a string representing the longest subsequence common to str1 and str2
 
-    Pseudo Code: http://en.wikipedia.org/wiki/Longest_common_subsequence_problem
+    Pseudo Code:
+        http://en.wikipedia.org/wiki/Longest_common_subsequence_problem
 """
+
 
 def build_lengths_matrix(str1, str2):
     matrix = [[0 for j in range(len(str2)+1)] for i in range(len(str1)+1)]
@@ -19,6 +21,7 @@ def build_lengths_matrix(str1, str2):
             else:
                 matrix[i+1][j+1] = max(matrix[i+1][j], matrix[i][j+1])
     return matrix
+
 
 def read_from_matrix(matrix, str1, str2):
     result = ""
@@ -33,6 +36,7 @@ def read_from_matrix(matrix, str1, str2):
             i -= 1
             j -= 1
     return result[::-1]
+
 
 def lcs(str1, str2):
     lengths = build_lengths_matrix(str1, str2)

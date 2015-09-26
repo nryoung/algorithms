@@ -5,7 +5,8 @@
 
     Gnome Sort Overview:
     ---------------------
-    A sorting algorithm similar to insertion sort except that the element is moved to its proper place by a series of swaps.
+    A sorting algorithm similar to insertion sort except that the element is
+    moved to its proper place by a series of swaps.
 
     Time Complexity: O(n^2)
 

@@ -1,4 +1,5 @@
 import unittest
+
 from ..dynamic_programming.lcs import lcs
 
 
@@ -6,7 +7,7 @@ class TestLCS(unittest.TestCase):
     """
     Tests the Longest Common Subsequence of several strings
     """
-    
+
     def test_lcs(self):
         str1 = "BANANA"
         str2 = "ABA"

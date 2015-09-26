@@ -5,16 +5,17 @@
 
     Sieve of Eratosthenes Overview:
     ------------------------
-    Is a simple, ancient algorithm for finding all prime numbers 
-    up to any given limit. It does so by iteratively marking as composite (i.e. not prime) 
-    the multiples of each prime, starting with the multiples of 2.
+    Is a simple, ancient algorithm for finding all prime numbers
+    up to any given limit. It does so by iteratively marking as composite
+    (i.e. not prime) the multiples of each prime, starting with the multiples
+    of 2.
 
-    The sieve of Eratosthenes is one of the most efficient ways 
+    The sieve of Eratosthenes is one of the most efficient ways
     to find all of the smaller primes (below 10 million or so).
 
     Time Complexity: O(n log log n)
 
-    Pseudocode: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes    
+    Pseudocode: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 """
 
 
