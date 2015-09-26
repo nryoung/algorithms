@@ -5,16 +5,17 @@
 
     Sieve of Atkin Overview:
     ------------------------
-    It is an optimized version of the ancient sieve of Eratosthenes 
-    which does some preliminary work and then marks off 
-    multiples of the square of each prime, rather than multiples of the prime itself. 
-    It was created in 2004 by A. O. L. Atkin and Daniel J. Bernstein.
+    It is an optimized version of the ancient sieve of Eratosthenes
+    which does some preliminary work and then marks off
+    multiples of the square of each prime, rather than multiples of the prime
+    itself. It was created in 2004 by A. O. L. Atkin and Daniel J. Bernstein.
 
     Time Complexity: O(n/log log n)
 
-    Pseudocode: https://en.wikipedia.org/wiki/Sieve_of_Atkin  
+    Pseudocode: https://en.wikipedia.org/wiki/Sieve_of_Atkin
 """
 from math import sqrt
+
 
 def atkin(limit):
     if limit == 2:
@@ -28,9 +29,9 @@ def atkin(limit):
     primes = [2, 3, 5]
     is_prime = [False] * (limit + 1)
     sqrt_limit = int(sqrt(limit)) + 1
-    
-    for x in range(1,sqrt_limit):
-        for y in range(1,sqrt_limit):
+
+    for x in range(1, sqrt_limit):
+        for y in range(1, sqrt_limit):
             n = 4 * x ** 2 + y ** 2
             if n <= limit and (n % 12 == 1 or n % 12 == 5):
                 is_prime[n] = not is_prime[n]
@@ -40,8 +41,8 @@ def atkin(limit):
             n = 3 * x ** 2 - y ** 2
             if x > y and (n <= limit) and (n % 12 == 11):
                 is_prime[n] = not is_prime[n]
-    
-    for index in range(5,sqrt_limit):
+
+    for index in range(5, sqrt_limit):
         if is_prime[index]:
             for composite in range(index ** 2, limit, index ** 2):
                 is_prime[composite] = False

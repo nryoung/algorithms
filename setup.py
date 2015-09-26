@@ -3,8 +3,8 @@ from setuptools import find_packages, setup
 
 # Read in the README for the long description on PyPI
 def long_description():
-    with open('README.rst', 'r') as f:
-        readme = unicode(f.read())
+    with open('README.rst', 'r', 'utf-8') as f:
+        readme = f.read()
     return readme
 
 setup(name='algorithms',

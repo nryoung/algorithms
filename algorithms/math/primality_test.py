@@ -1,5 +1,8 @@
 from math import sqrt
+
 from algorithms.math.sieve_eratosthenes import eratosthenes
+
+
 CACHE_LIMIT = 10 ** 6
 primes_cache_list = []
 primes_cache_bool = []
@@ -10,7 +13,9 @@ def is_prime(number, cache=True):
         return False
     global primes_cache_list, primes_cache_bool
     if cache and len(primes_cache_list) == 0:
-        primes_cache_list,primes_cache_bool = eratosthenes(CACHE_LIMIT, return_boolean=True)
+        primes_cache_list, primes_cache_bool = eratosthenes(
+            CACHE_LIMIT, return_boolean=True
+        )
         for prime in primes_cache_list:
             primes_cache_bool[prime] = True
     if number < len(primes_cache_bool):
@@ -31,4 +36,3 @@ def is_prime(number, cache=True):
             return False
         to_check += 1
     return True
-

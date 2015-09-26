@@ -3,13 +3,16 @@
     A Naive Implementation of union find data structure.
     Union Find Overview:
     ------------------------
-    A disjoint-set data structure, also called union-find data structure implements two functions:
+    A disjoint-set data structure, also called union-find data structure
+    implements two functions:
         union(A, B) - merge A's set with B's set
         find(A) - finds what set A belongs to
     Navie approach:
         Find follows parent nodes until it reaches the root.
-        Union combines two trees into one by attaching the root of one to the root of the other
-    Time Complexity  :  O(N) (a highly unbalanced tree might be created, nothing better a linked-list)
+        Union combines two trees into one by attaching the root of one to the
+        root of the other
+    Time Complexity  :  O(N) (a highly unbalanced tree might be created,
+    nothing better a linked-list)
     Psuedo Code: http://en.wikipedia.org/wiki/Disjoint-set_data_structure
 """
 
@@ -29,7 +32,9 @@ class UnionFind:
         if type(x) != int:
             raise TypeError("x must be integer")
         if x != self.__N:
-            raise ValueError("a new element must have index {0} since the total num of elements is {0}".format(self.__N))
+            raise ValueError(
+                "a new element must have index {0}".format(self.__N)
+            )
         self.__parent.append(x)
         self.__N = self.__N + 1
 
