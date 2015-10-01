@@ -56,7 +56,7 @@ Algorithms implemented so far:
 - Cumulative Density Function (Approximation; 16 digit precision for 300 iter.)
 - Sieve of Eratosthenes
 
-+ **Dynamic Programming:**
+**Dynamic Programming:**
 
 - Longest Common Subsequence
 
@@ -94,11 +94,11 @@ All prequisites for the algorithms are listed in the source code for each algori
 Tests:
 ------
 
-Nose is used as the main test runner and all Unit Tests can be run by:
+Pytest is used as the main test runner and all Unit Tests can be run with:
 
 ::
 
-    $ python algorithms/run_tests.py
+    $ ./run_tests.py
 
 
 Contributing:

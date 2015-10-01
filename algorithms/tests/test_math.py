@@ -1,4 +1,3 @@
-import nose
 import unittest
 
 from ..math.extended_gcd import extended_gcd
@@ -102,15 +101,15 @@ class TestStdNormPDF(unittest.TestCase):
     def test_pdf(self):
         # Calculate standard normal pdf for x=1
         a = pdf(1)
-        nose.tools.assert_almost_equal(a, 0.24197072451914337)
+        self.assertAlmostEqual(a, 0.24197072451914337)
 
         # Calculate standard normal pdf for x=(-1)
         a = pdf(-1)
-        nose.tools.assert_almost_equal(a, 0.24197072451914337)
+        self.assertAlmostEqual(a, 0.24197072451914337)
 
         # Calculate standard normal pdf for x=13, mean=10, std_dev=1
         a = pdf(x=13, mean=10, std_dev=1)
-        nose.tools.assert_almost_equal(a, 0.004431848411938008)
+        self.assertAlmostEqual(a, 0.004431848411938008)
 
 
 class TestApproxCdf(unittest.TestCase):
@@ -118,12 +117,12 @@ class TestApproxCdf(unittest.TestCase):
     def test_cdf(self):
         # Calculate cumulative distribution function for x=1
         a = cdf(1)
-        nose.tools.assert_almost_equal(a, 0.841344746068543)
+        self.assertAlmostEqual(a, 0.841344746068543)
 
         # Calculate cumulative distribution function x=0
         a = cdf(0)
-        nose.tools.assert_almost_equal(a, 0.5)
+        self.assertAlmostEqual(a, 0.5)
 
         # Calculate cumulative distribution function for x=(-1)
         a = cdf(-1)
-        nose.tools.assert_almost_equal(a, 0.15865525393145702)
+        self.assertAlmostEqual(a, 0.15865525393145702)
