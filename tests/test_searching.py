@@ -1,7 +1,7 @@
 """ Unit Tests for searching """
 import unittest
 
-from ..searching import (
+from algorithms.searching import (
     binary_search,
     kmp_search,
     rabinkarp_search,

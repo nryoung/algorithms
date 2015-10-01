@@ -1,5 +1,6 @@
 import unittest
-from ..shuffling import knuth
+
+from algorithms.shuffling import knuth
 
 
 class ShufflingAlgorithmTestCase(unittest.TestCase):
