@@ -1,6 +1,6 @@
 import unittest
 
-from ..random import mersenne_twister
+from algorithms.random import mersenne_twister
 
 
 class TestMersenneTwister(unittest.TestCase):

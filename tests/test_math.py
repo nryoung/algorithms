@@ -1,11 +1,11 @@
 import unittest
 
-from ..math.extended_gcd import extended_gcd
-from ..math.lcm import lcm
-from ..math.sieve_eratosthenes import eratosthenes
-from ..math.sieve_atkin import atkin
-from ..math.std_normal_pdf import pdf
-from ..math.approx_cdf import cdf
+from algorithms.math.extended_gcd import extended_gcd
+from algorithms.math.lcm import lcm
+from algorithms.math.sieve_eratosthenes import eratosthenes
+from algorithms.math.sieve_atkin import atkin
+from algorithms.math.std_normal_pdf import pdf
+from algorithms.math.approx_cdf import cdf
 
 
 class TestExtendedGCD(unittest.TestCase):

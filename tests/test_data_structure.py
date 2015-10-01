@@ -1,7 +1,7 @@
 from random import shuffle
 import unittest
 
-from ..data_structure import (
+from algorithms.data_structure import (
     stack,
     queue,
     union_find,

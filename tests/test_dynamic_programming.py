@@ -1,6 +1,6 @@
 import unittest
 
-from ..dynamic_programming.lcs import lcs
+from algorithms.dynamic_programming.lcs import lcs
 
 
 class TestLCS(unittest.TestCase):
