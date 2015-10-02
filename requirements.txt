@@ -1,6 +1,9 @@
 flake8==2.4.1
 mccabe==0.3.1
 pep8==1.5.7
+pluggy==0.3.1
 py==1.4.30
 pyflakes==0.8.1
 pytest==2.8.0
+tox==2.1.1
+virtualenv==13.1.2
