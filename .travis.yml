@@ -18,3 +18,8 @@ matrix:
 install: pip install tox
 # command to run tests
 script: tox -e $TOX_ENV
+# codecov
+before_install:
+  - pip install codecov
+after_success:
+  - codecov
