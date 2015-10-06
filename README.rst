@@ -1,8 +1,11 @@
+Algorithms
+==========
+
 .. image:: https://travis-ci.org/nryoung/algorithms.svg?branch=master
     :target: https://travis-ci.org/nryoung/algorithms
 
-Algorithms
-==========
+.. image:: http://codecov.io/github/nryoung/algorithms/coverage.svg?branch=master
+    :target: http://codecov.io/github/nryoung/algorithms?branch=master
 
 This is an attempt to build a cohesive module of algorithms in Python.
 

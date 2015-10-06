@@ -27,9 +27,11 @@ def flake8_main(args):
 
 
 if __name__ == '__main__':
+    pytest_args = sys.argv[1:]
     run_tests = True
     run_flake8 = True
 
+    # Logic to run flake8 only
     try:
         sys.argv.remove('--lintonly')
     except ValueError:
@@ -38,8 +40,16 @@ if __name__ == '__main__':
         run_tests = False
         run_flake8 = True
 
+    # Logic to run pytest with coverage turned on
+    try:
+        pytest_args.remove('--coverage')
+    except ValueError:
+        pass
+    else:
+        pytest_args = ['--cov', 'algorithms'] + pytest_args
+
     if run_tests:
-        exit_on_failure(pytest.main())
+        exit_on_failure(pytest.main(pytest_args))
 
     if run_flake8:
         exit_on_failure(flake8_main(FLAKE8_ARGS))

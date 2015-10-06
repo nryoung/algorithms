@@ -14,12 +14,12 @@ matrix:
   allow_failures:
     - env: TOX_ENV=py35
 
-# command to install dependencies
-install: pip install tox
-# command to run tests
-script: tox -e $TOX_ENV
-# codecov
-before_install:
-  - pip install codecov
+install:
+  - pip install tox
+
+script:
+  - tox -e $TOX_ENV
+
 after_success:
+  - pip install codecov
   - codecov
