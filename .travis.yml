@@ -22,4 +22,4 @@ script:
 
 after_success:
   - pip install codecov
-  - codecov
+  - codecov -e TOX_ENV
