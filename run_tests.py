@@ -46,7 +46,11 @@ if __name__ == '__main__':
     except ValueError:
         pass
     else:
-        pytest_args = ['--cov', 'algorithms'] + pytest_args
+        pytest_args = [
+            '--cov-report',
+            'xml',
+            '--cov',
+            'algorithms'] + pytest_args
 
     if run_tests:
         exit_on_failure(pytest.main(pytest_args))
