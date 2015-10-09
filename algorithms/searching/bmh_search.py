@@ -1,12 +1,8 @@
 """
-    bmh_search.py
-
-    Implementation of bmh search to find a substring in a string
-
-    BMH Search Overview:
-    --------------------
-    Uses a bad-character shift of the rightmost character of the window to
-    compute shifts.
+    BMH Search
+    ----------
+    Search that attempts to find a substring in a string. Uses a bad-character
+    shift of the rightmost character of the window to compute shifts.
 
     Time: Complexity: O(m + n), where m is the substring to be found.
 
@@ -18,6 +14,16 @@
 
 
 def search(text, pattern):
+    """
+    Takes a string and searches if the `pattern` is substring within `text`.
+
+    :param text: A string that will be searched.
+    :param pattern: A string that will be searched as a substring within
+                    `text`.
+    :rtype: The indices of all occurences of where the substring `pattern`
+            was found in `text`.
+    """
+
     pattern_length = len(pattern)
     text_length = len(text)
     offsets = []

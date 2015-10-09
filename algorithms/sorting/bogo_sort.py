@@ -1,10 +1,6 @@
 """
-    bogo_sort.py
-
-    Implementation of bogo sort on a list and returns a sorted list.
-
-    Bogo Sort Overview:
-    -------------------
+    Bogo Sort
+    ---------
     A naive sorting that picks two elements at random and swaps them.
 
     Time Complexity: O(n * n!)
@@ -13,13 +9,23 @@
 
     Stable: No
 
-    WARNING: This algorithm may never sort the list correctly.
+    Psuedo code: None
+
+    **WARNING**: This algorithm may never sort the list correctly.
 """
 
 import random
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
+
+    :param seq: A list of integers
+    :rtype: A list of sorted integers
+    """
+
     if len(seq) == 1:
         return seq
     random.seed()
@@ -35,4 +41,10 @@ def sort(seq):
 
 
 def is_sorted(seq):
+    """
+    Takes a list of integers and checks if the list is in sorted order.
+
+    :param seq: A list of integers
+    :rtype: Boolean
+    """
     return all(seq[i - 1] <= seq[i] for i in range(1, len(seq)))

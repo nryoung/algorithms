@@ -1,15 +1,18 @@
 """
-    union_find_by_rank.py
-    An implementation of union find by rank data structure.
-    Union Find Overview:
-    ------------------------
+    Union Find by Rank
+    ------------------
     A disjoint-set data structure, also called union-find data structure
     implements two functions:
-        union(A, B) - merge A's set with B's set
-        find(A) - finds what set A belongs to
+
+    union(A, B) - merge A's set with B's set
+
+    find(A) - finds what set A belongs to
+
     Union by rank approach:
-        attach the smaller tree to the root of the larger tree
+    attach the smaller tree to the root of the larger tree
+
     Time Complexity  :  O(logn)
+
     Psuedo Code: http://en.wikipedia.org/wiki/Disjoint-set_data_structure
 """
 

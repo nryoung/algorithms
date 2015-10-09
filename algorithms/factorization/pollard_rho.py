@@ -1,29 +1,26 @@
+"""
+    Pollard Rho Algorithm
+    ---------------------
+    Pollard's rho algorithm is a special-purpose integer factorization
+    algorithm. It was invented by John Pollard in 1975. It is particularly
+    effective for a composite number having a small prime factor.
+
+"""
 import random
 
 from algorithms.math.primality_test import is_prime
 from fractions import gcd
 
-"""
-    pollard_rho.py
-
-    Implementation of the Pollard Rho algorithm.
-
-    Pollard Rho algorithm Overview:
-    ------------------------
-    Pollard's rho algorithm is a special-purpose integer factorization
-    algorithm.
-    It was invented by John Pollard in 1975.
-    It is particularly effective for a composite
-    number having a small prime factor.
-
-"""
-
 
 def f(x):
+    """
+    """
     return x*x+1
 
 
 def rho(n, x1=2, x2=2):
+    """
+    """
     if n % 2 == 0:
         return 2
     i = 0
@@ -42,6 +39,8 @@ def rho(n, x1=2, x2=2):
 
 
 def pollard_rho_rec(x, factors):
+    """
+    """
     if x == 1:
         return
 
@@ -55,6 +54,8 @@ def pollard_rho_rec(x, factors):
 
 
 def pollard_rho(x):
+    """
+    """
     if x == 1 or x == 0:
         return [x]
     factors = []

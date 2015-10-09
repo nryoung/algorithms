@@ -1,23 +1,10 @@
 """
-  Directed Graph data structure implemented:
-  --------------------------------------------
+  Directed Graph
+  --------------
   The Digraph class represents a directed graph of vertices
-  which can be any hashable value.
+  which can be any hashable value. Parallel edges and self-loops are permitted.
 
-  It supports the following two primary operations:
-  add_edge: add an edge to the graph O(1)
-  adj: return list of all of the vertices adjacent to a vertex O(1)
-  vertices: return list of all vertices in the graph O(V)
-
-  It also supports the following secondary operations:
-  vertex_count: return the number of vertices O(1)
-  edge_count: return the number of edges O(1)
-  degree: return degree of the vertex O(1)
-  reverse: return a reversed version of the digraph O(V+E)
-
-  Parallel edges and self-loops are permitted.
-
-  Adapted from: http://algs4.cs.princeton.edu/42directed/Digraph.java.html
+  Pseudo Code: http://algs4.cs.princeton.edu/42directed/Digraph.java.html
  """
 
 
@@ -30,6 +17,8 @@ class Digraph():
     def vertex_count(self):
         """
         Returns the number of vertices in the graph.
+
+        Worst Case Complexity: O(1)
         """
 
         return self.__v_count
@@ -37,6 +26,8 @@ class Digraph():
     def edge_count(self):
         """
         Returns the number of edges in the graph.
+
+        Worst Case Complexity: O(1)
         """
 
         return self.__e_count
@@ -44,6 +35,8 @@ class Digraph():
     def add_edge(self, src, dest):
         """
         Adds an undirected edge 'src'-'dest' to the graph.
+
+        Worst Case Complexity O(1)
         """
 
         if src in self.__adj:
@@ -63,12 +56,16 @@ class Digraph():
     def adj(self, src):
         """
         Returns the vertices adjacent to vertex 'src'.
+
+        Worst Case Complexity: O(1)
         """
         return self.__adj[src]
 
     def outdegree(self, src):
         """
         Returns the degree of the vertex 'src'
+
+        Worst Case Complexity: O(1)
         """
         if src in self.__adj:
             return len(self.__adj[src])
@@ -78,12 +75,16 @@ class Digraph():
     def vertices(self):
         """
         Returns an iterable of all the vertices in the graph.
+
+        Worst Case Complexity: O(V)
         """
         return self.__adj.keys()
 
     def reverse(self):
         """
         Returns the reverse of this digraph
+
+        Worst Case Complexity: O(V+E)
         """
         digraph_reversed = Digraph()
         old_vertices = self.vertices()

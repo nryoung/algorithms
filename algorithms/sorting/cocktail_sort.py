@@ -1,13 +1,8 @@
 """
-    cocktail_sort.py
-
-    Implementation of cocktail sort (aka bidirectional bubble sort,
-    or the happy hour sort) on a list.
-
-    Cocktail Sort Overview:
-    ------------------------
-    Walk the list bidirectionally, swapping neighbors if one should come
-    before/after the other.
+    Cocktail Sort
+    -------------
+    A bidirectional bubble sort. Walks the elements bidirectionally, swapping
+    neighbors if one should come before/after the other.
 
     Time Complexity: O(n**2)
 
@@ -16,10 +11,19 @@
     Stable: Yes
 
     Psuedo Code: http://en.wikipedia.org/wiki/Cocktail_sort
+
 """
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
+
+    :param seq: A list of integers
+    :rtype: A list of sorted integers
+    """
+
     lower_bound = -1
     upper_bound = len(seq) - 1
     swapped = True

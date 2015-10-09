@@ -1,3 +1,10 @@
+"""
+    Primality Test
+    --------------
+    Implementation of a Primality Test that uses a cache to improve
+    performance.
+
+"""
 from math import sqrt
 
 from algorithms.math.sieve_eratosthenes import eratosthenes
@@ -9,6 +16,14 @@ primes_cache_bool = []
 
 
 def is_prime(number, cache=True):
+    """
+    Takes `number` and determines if it is prime.
+
+    :param number: The integer to be tested for primality.
+    :param cache: A boolean to determine if a cache should be used to
+                  improve performance.
+    :rtype: A boolean that signifies if `number` is prime.
+    """
     if number < 2:
         return False
     global primes_cache_list, primes_cache_bool

@@ -1,14 +1,10 @@
 """
-    gnome_sort.py
-
-    Implementation of gnome sort on a list and returns a sorted list.
-
-    Gnome Sort Overview:
-    ---------------------
+    Gnome Sort
+    ----------
     A sorting algorithm similar to insertion sort except that the element is
     moved to its proper place by a series of swaps.
 
-    Time Complexity: O(n^2)
+    Time Complexity: O(n**2)
 
     Space Complexity: O(1) auxillary
 
@@ -20,7 +16,13 @@
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
 
+    :param seq: A list of integers
+    :rtype: A list of sorted integers
+    """
     i = 1
     last = 0
     while i < len(seq):

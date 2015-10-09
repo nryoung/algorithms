@@ -1,10 +1,6 @@
 """
-    sieve_eratosthenes.py
-
-    Implementation of the Sieve of Eratosthenes algorithm.
-
-    Sieve of Eratosthenes Overview:
-    ------------------------
+    Sieve of Eratosthenes
+    ---------------------
     Is a simple, ancient algorithm for finding all prime numbers
     up to any given limit. It does so by iteratively marking as composite
     (i.e. not prime) the multiples of each prime, starting with the multiples
@@ -20,6 +16,15 @@
 
 
 def eratosthenes(end, start=2, return_boolean=False):
+    """
+    Finds all primes < `end`.
+
+    :param end: An integer. The upper limit of the range to look for primes.
+    :param start: An integer. The start of the range to look for primes.
+    :param return_boolean: A boolean. Represents the type of return type.
+    :rtype: Depending on `return_boolean` either returns boolean and primes or
+            just the primes.
+    """
     primes = []
     if end < start or end < 2:
         return []

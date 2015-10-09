@@ -1,21 +1,21 @@
-from algorithms.math.sieve_eratosthenes import eratosthenes
-
-
 """
-    trial_division.py
-
-    Implementation of the Trial division.
-
-    Trial division Overview:
-    ------------------------
+    Trial Division
+    --------------
     Trial division is the most laborious but easiest
     to understand of the integer factorization algorithms.
     Try to divide a number n by all prime numbers < sqrt(n).
 
 """
+from algorithms.math.sieve_eratosthenes import eratosthenes
 
 
 def trial_division(n):
+    """
+    Uses trial division to find prime factors of `n`.
+
+    :param n: An integer to factor.
+    :rtype: The prime factors of `n`
+    """
     prime_factors = []
     if n < 2:
         return prime_factors

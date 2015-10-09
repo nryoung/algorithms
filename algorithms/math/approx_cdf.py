@@ -1,4 +1,6 @@
 """
+    Approximate Cumulative Distribution Function
+    --------------------------------------------
     Calculates the cumulative distribution function (CDF)
     of the normal distribution based on an approximation by George Marsaglia:
     Marsaglia, George (2004). "Evaluating the Normal Distribution".
@@ -7,6 +9,8 @@
     16 digit precision for 300 iterations when x = 10.
 
     Equation:
+
+
     f(x) = 1/2 + pdf(x) * (x + (x^3/3) + (x^5/3*5) + (x^7/3*7) + ...)
 """
 
@@ -14,7 +18,14 @@ from algorithms.math import std_normal_pdf
 
 
 def cdf(x, iterations=300):
+    """
+    Calculates the cumulative distribution function of the normal distribution.
+    Uses a taylor exponent to calculate this.
 
+    :param x: An integer that represents the taylor exponent.
+    :param iterations: An integer representing the number of iterations.
+    :rtype: The normal distribution
+    """
     product = 1.0
     taylor_exp = [x]
     for i in range(3, iterations, 2):

@@ -1,10 +1,6 @@
 """
-    mersenne_twister.py
-
-    Implementation of Mersenne Twister pseudo random number generator
-
-    Mersenne Twister Overview:
-    ---------------------------
+    Mersenne Twister
+    ----------------
     Generates high quality pseudo random integers with a long period.
     Used as the default random number generator for several
     languages (including Python).
@@ -21,7 +17,11 @@ class MersenneTwister:
         self.index = 0
 
     def seed(self, seed):
-        """Initialize generator"""
+        """
+        Initialize generator.
+
+        :param seed: An integer value to seed the generator with
+        """
         self.state = []
         self.index = 0
         self.state.append(seed)
@@ -31,7 +31,11 @@ class MersenneTwister:
             self.state.append(n)
 
     def randint(self):
-        """Extract random number"""
+        """
+        Extracts a random number.
+
+        :rtype: A random integer
+        """
         if self.index == 0:
             self.generate()
 
@@ -45,7 +49,10 @@ class MersenneTwister:
         return y
 
     def generate(self):
-        """Generate 624 new random numbers"""
+        """
+        Generates 624 random numbers and stores in the state list.
+
+        """
         for i in range(624):
             n = self.state[i] & 0x80000000
             n += self.state[(i+1) % 624] & 0x7fffffff

@@ -1,23 +1,11 @@
 """
-  Unidrected Graph data structure implemented:
-  --------------------------------------------
-  The Undirected_Graph class represents an undirected graph of vertices
-  which can be any hashable value.
+    Unidrected Graph
+    ----------------
+    The Undirected_Graph class represents an undirected graph of vertices
+    which can be any hashable value.
 
-  It supports the following two primary operations:
-  add_edge: add an edge to the graph O(1)
-  adj: return list of all of the vertices adjacent to a vertex O(1)
-  vertices: return list of all vertices in the graph O(V)
-
-  It also supports the followign secondary operations:
-  vertex_count: return the number of vertices O(1)
-  edge_count: return the number of edges O(1)
-  degree: return degree of the vertex O(1)
-
-  Parallel edges and self-loops are permitted.
-
-  Adapted from: http://algs4.cs.princeton.edu/41undirected/Graph.java.html
- """
+    Pseudo Code: http://algs4.cs.princeton.edu/41undirected/Graph.java.html
+"""
 
 
 class Undirected_Graph:
@@ -29,6 +17,8 @@ class Undirected_Graph:
     def vertex_count(self):
         """
         Returns the number of vertices in the graph.
+
+        Time Complexity: O(1)
         """
 
         return self.__v_count
@@ -36,6 +26,8 @@ class Undirected_Graph:
     def edge_count(self):
         """
         Returns the number of edges in the graph.
+
+        Time Complexity: O(1)
         """
 
         return self.__e_count
@@ -43,6 +35,8 @@ class Undirected_Graph:
     def add_edge(self, src, dest):
         """
         Adds an undirected edge 'src'-'dest' to the graph.
+
+        Time Complexity: O(1)
         """
         if src in self.__adj:
             self.__adj[src].append(dest)
@@ -61,12 +55,16 @@ class Undirected_Graph:
     def adj(self, src):
         """
         Returns the vertices adjacent to vertex 'src'.
+
+        Time Complexity: O(1)
         """
         return self.__adj[src]
 
     def degree(self, src):
         """
         Returns the degree of the vertex 'src'
+
+        Time Complexity: O(1)
         """
         if src in self.__adj:
             return len(self.__adj[src])
@@ -76,6 +74,8 @@ class Undirected_Graph:
     def vertices(self):
         """
         Returns an iterable of all the vertices in the graph.
+
+        Time Complexity: O(V)
         """
         return self.__adj.keys()
 
