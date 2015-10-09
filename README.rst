@@ -39,6 +39,7 @@ Algorithms implemented so far:
 - Selection Sort
 - Shell Sort
 - Gnome Sort
+- Strand Sort
 
 **Searching:**
 

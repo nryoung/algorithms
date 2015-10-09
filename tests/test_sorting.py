@@ -13,6 +13,7 @@ from algorithms.sorting import (
     cocktail_sort,
     quick_sort_in_place,
     gnome_sort,
+    strand_sort,
 )
 
 
@@ -154,4 +155,14 @@ class TestGnomeSort(SortingAlgorithmTestCase):
 
     def test_gnomesort(self):
         self.output = gnome_sort.sort(self.input)
+        self.assertEqual(self.correct, self.output)
+
+
+class TestStrandSort(SortingAlgorithmTestCase):
+    """
+    Tests Strand sort on a small range from 0-9
+    """
+
+    def test_strandsort(self):
+        self.output = strand_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
