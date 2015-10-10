@@ -27,3 +27,4 @@ List of contributors:
 - `kabrapratik28 <https://github.com/kabrapratik28>`_
 - `JulianGriggs <https://github.com/JulianGriggs>`_
 - `oprblackout <https://github.com/oprblackout>`_
+- `NoahTheDuke <https://github.com/NoahTheDuke>`_
