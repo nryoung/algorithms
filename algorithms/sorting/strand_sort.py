@@ -17,53 +17,48 @@
     Psuedo Code: https://en.wikipedia.org/wiki/Strand_sort
 """
 
-from collections import deque
-
 
 def sort(array):
     if len(array) < 2:
         return array
     result = []
     while array:
-        sublist = [array.pop()]
+        sublist = [array.pop(0)]
+        leftovers = []
         last = sublist[0]
-        sub_append = sublist.append
-        leftovers = deque()
-        left_append = leftovers.append
+        # For speed, frequently invoked functions are assigned to locally-
+        # scoped variables, which greatly reduces overhead in calling them.
+        sublist_append = sublist.append
+        leftovers_append = leftovers.append
         for item in array:
             if item >= last:
-                sub_append(item)
+                sublist_append(item)
                 last = item
             else:
-                left_append(item)
+                leftovers_append(item)
         result = merge(result, sublist)
         array = leftovers
     return result
 
 
 def merge(left, right):
-    merged_list = []
-    merged_list_append = merged_list.append
+    if not left:
+        return right
+    if not right:
+        return left
 
-    it_left = iter(left)
-    it_right = iter(right)
+    if left[-1] > right[-1]:
+        left, right = right, left
 
-    left = next(it_left, None)
-    right = next(it_right, None)
+    it = iter(right)
+    y = next(it)
+    result = []
 
-    while left is not None and right is not None:
-        if left > right:
-            merged_list_append(right)
-            right = next(it_right, None)
-        else:
-            merged_list_append(left)
-            left = next(it_left, None)
-
-    if left:
-        merged_list_append(left)
-        merged_list.extend(i for i in it_left)
-    else:
-        merged_list_append(right)
-        merged_list.extend(i for i in it_right)
-
-    return merged_list
+    for x in left:
+        while y < x:
+            result.append(y)
+            y = next(it)
+        result.append(x)
+    result.append(y)
+    result.extend(it)
+    return result
