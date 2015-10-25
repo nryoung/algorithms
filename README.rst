@@ -48,6 +48,7 @@ Algorithms implemented so far:
 - Knuth-Morris-Pratt
 - Rabin-Karp
 - Depth First Search (Recursive)
+- Breadth First Search (Iterative)
 
 **Shuffling:**
 
