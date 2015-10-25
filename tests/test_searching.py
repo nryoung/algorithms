@@ -6,7 +6,8 @@ from algorithms.searching import (
     kmp_search,
     rabinkarp_search,
     bmh_search,
-    depth_first_search
+    depth_first_search,
+    breadth_first_search
 )
 
 
@@ -155,3 +156,35 @@ class TestDepthFirstSearch(unittest.TestCase):
             [5, 1, 2, 4, 11, 12, 7, 8, 9, 10, 3, 6, 15, 13, 14]
         )
         self.assertEqual(rv3e, None)
+
+
+class TestBreadthFirstSearch(unittest.TestCase):
+    """
+    Tests DFS on a graph represented by a adjacency list
+    """
+    def test_bfs(self):
+        self.graph = {
+            'A': set(['B', 'C']),
+            'B': set(['A', 'D', 'E']),
+            'C': set(['A', 'F']),
+            'D': set(['B']),
+            'E': set(['B', 'F']),
+            'F': set(['C', 'E'])
+        }
+        rv1 = breadth_first_search.bfs(self.graph, 'A')
+        self.assertEqual(rv1, {'C', 'A', 'B', 'D', 'F', 'E'})
+        self.graph = {
+            'A': set(['B', 'C', 'E']),
+            'B': set(['A', 'D', 'F']),
+            'C': set(['A', 'G']),
+            'D': set(['B']),
+            'F': set(['B']),
+            'E': set(['A']),
+            'G': set(['C'])
+        }
+        rv1 = breadth_first_search.bfs(self.graph, "A")
+        rv2 = breadth_first_search.bfs(self.graph, "G")
+        rv1e = breadth_first_search.bfs(self.graph, "Z")
+        self.assertEqual(rv1, set(['A', 'B', 'D', 'F', 'C', 'G', 'E']))
+        self.assertEqual(rv2, set(['G', 'C', 'A', 'B', 'D', 'F', 'E']))
+        self.assertEqual(rv1e, None)
