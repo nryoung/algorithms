@@ -1,10 +1,6 @@
 """
-    merge_sort.py
-
-    Implementation of merge sort on a list and returns a sorted list.
-
-    Merge Sort Overview:
-    ------------------------
+    Merge Sort
+    ----------
     Uses divide and conquer to recursively divide and sort the list
 
     Time Complexity: O(n log n)
@@ -19,6 +15,14 @@
 
 
 def merge(left, right):
+    """
+    Takes two sorted sub lists and merges them in to a single sorted sub list
+    and returns it.
+
+    :param left: A list of sorted integers
+    :param right: A list of sorted integers
+    :rtype: A list of sorted integers
+    """
     result = []
     n, m = 0, 0
     while n < len(left) and m < len(right):
@@ -35,6 +39,13 @@ def merge(left, right):
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
+
+    :param seq: A list of integers
+    :rtype: A list of sorted integers
+    """
     if len(seq) <= 1:
         return seq
 

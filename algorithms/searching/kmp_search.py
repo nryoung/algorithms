@@ -1,11 +1,9 @@
 """
-    kmp_search.py
 
-    Implementation of kmp search on a sorted list.
-
-    KMP Search Overview:
-    ------------------------
-    Uses a prefix function to reduce the searching time.
+    KMP Search
+    ----------
+    Implementation of kmp search on string. Uses a prefix function to reduce
+    the searching time.
 
     Time Complexity:  O(n + k), where k is the substring to be found
 
@@ -15,6 +13,17 @@
 
 
 def search(string, word):
+    """
+    Searches for occurrences of a "word" within a main "string" by employing
+    the observation that when a mismatch occurs, the word itself embodies
+    sufficient information to determine where the next match could begin,
+    thus bypassing re-examination of previously matched characters.
+
+    :param string: The string to be searched.
+    :param word: The sub string to be searched for.
+    :rtype: The indices of all occurences of where the substring is found in
+            the string.
+    """
     word_length = len(word)
     string_length = len(string)
     offsets = []
@@ -36,6 +45,12 @@ def search(string, word):
 
 
 def compute_prefix(word):
+    """
+    Returns the prefix of the word.
+
+    :param word: The sub string that the prefix will be computed for.
+    :rtype: Returns computed prefix of the word.
+    """
     word_length = len(word)
     prefix = [0] * word_length
     k = 0

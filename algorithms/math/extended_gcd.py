@@ -1,17 +1,20 @@
 """
-    extended_gcd.py
-
-    This module implements the extended greatest common divider algorithm.
-
-    Pre: two integers a and b
-    Post: a tuple (x, y) where a*x + b*y = gcd(a, b)
+    Extended Greatest Common Divisor
+    --------------------------------
+    Implementation of the extended greatest common divisor algorithm.
 
     Pseudo Code: http://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
 """
 
 
 def extended_gcd(p, q):
+    """
+    Find the greatest common divisor and returns them.
 
+    :param a: An integer.
+    :param b: An integer.
+    :rtype: A tuple representing the greatest common divisor.
+    """
     (a, b) = (p, q)
 
     if a < 0:

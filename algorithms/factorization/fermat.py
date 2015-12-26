@@ -1,20 +1,22 @@
-from math import sqrt
-
 """
-    fermat.py
-
-    Implementation of the Fermat factorization.
-
-    Fermat factorization Overview:
-    ------------------------
+    Fermat Factorization
+    --------------------
     Fermat's factorization method is based on the representation
     of an odd integer as the difference of two squares:
+
     N = a*a-b*b = (a-b)*(a+b)
 
 """
+from math import sqrt
 
 
 def fermat(n):
+    """
+    Factorization of the integer `n`.
+
+    :param n: An integer to be factored.
+    :rtype: The factorization of `n`.
+    """
     if n & 1 == 0:
         return [n >> 1, 2]
     x = int(sqrt(n))

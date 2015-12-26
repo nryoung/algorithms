@@ -1,18 +1,22 @@
 """
-    union_find_with_path_compression.py
-    An implementation of union find with path compression data structure.
-    Union Find Overview:
-    ------------------------
+    Union Find with path compression
+    --------------------------------
     A disjoint-set data structure, also called union-find data structure
     implements two functions:
-        union(A, B) - merge A's set with B's set
-        find(A) - finds what set A belongs to
+
+    union(A, B) - merge A's set with B's set
+
+    find(A) - finds what set A belongs to
+
     Union with path compression approach:
-        Each node visited on the way to a root node may as well be attached
-        directly to the root node.
-        attach the smaller tree to the root of the larger tree
+
+    Each node visited on the way to a root node may as well be attached
+    directly to the root node.
+    attach the smaller tree to the root of the larger tree
+
     Time Complexity  :  O(a(n)), where a(n) is the inverse of the function
     n=f(x)=A(x,x) and A is the extremely fast-growing Ackermann function.
+
     Psuedo Code: http://en.wikipedia.org/wiki/Disjoint-set_data_structure
 """
 

@@ -1,18 +1,23 @@
 """
-    union_find.py
-    A Naive Implementation of union find data structure.
-    Union Find Overview:
-    ------------------------
+    Union Find:
+    -----------
     A disjoint-set data structure, also called union-find data structure
     implements two functions:
-        union(A, B) - merge A's set with B's set
-        find(A) - finds what set A belongs to
-    Navie approach:
-        Find follows parent nodes until it reaches the root.
-        Union combines two trees into one by attaching the root of one to the
-        root of the other
+
+    union(A, B) - merge A's set with B's set
+
+    find(A) - finds what set A belongs to
+
+
+    Naive approach:
+
+    Find follows parent nodes until it reaches the root.
+    Union combines two trees into one by attaching the root of one to the
+    root of the other
+
     Time Complexity  :  O(N) (a highly unbalanced tree might be created,
     nothing better a linked-list)
+
     Psuedo Code: http://en.wikipedia.org/wiki/Disjoint-set_data_structure
 """
 

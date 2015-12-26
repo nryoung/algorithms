@@ -1,54 +1,20 @@
 """
-    Binary Search Tree data structure implemented:
-    --------------------------------
+    Binary Search Tree
+    ------------------
     The Binary Search Tree represents an ordered symbol table of generic
     key-value pairs.  Keys must be comparable.  Does not permit duplicate keys.
     When assocating a value with a key already present in the BST, the previous
     value is replaced by the new one.  This implementation is for an unbalanced
     BST.
 
-    It supports the following primary operations:
-    Method        Description
-    -----------------------------------------
-    size          Return size of BST
-    get           Retrieve value for key in BST
-    put           Add key-value pair to BST
-    contains      Check if key is in BST
-    is_empty      Check if BST is empty
-    min_key       Get the minimum key in BST
-    max_key       Get the maximum key in BST
-    floor_key     Get the biggest key that is less than or equal to key
-    ceiling_key   Get the smallest key that is greater than or equal to key
-    rank          Get get the number of keys less than key
-    select_key    Get the key with a given rank
-    delete_min    Delete the key-value pair with minimum key from BST
-    delete_max    Delete the key-value pair with maximum key from BST
-    delete        Delete key-value pair with given key from BST
-    keys          Get all keys in BST in ascending order
-
-    Method       Worst Case     Balanced Tree
-    -----------------------------------------
-    size         O(1)           O(1)
-    get          O(N)           O(lg N)
-    put          O(N)           O(lg N)
-    contains     O(N)           O(lg N)
-    is_empty     O(1)           O(1)
-    min_key      O(N)           O(lg N)
-    max_key      O(N)           O(lg N)
-    floor_key    O(N)           O(lg N)
-    ceiling_key  O(N)           O(lg N)
-    rank         O(N)           O(lg N)
-    select_key   O(N)           O(lg N)
-    delete_min   O(N)           O(lg N)
-    delete_max   O(N)           O(lg N)
-    delete       O(N)           O(lg N)
-    keys         O(N)           O(N)
-
-    Adapted from: http://algs4.cs.princeton.edu/32bst
+    Pseudo Code: http://algs4.cs.princeton.edu/32bst
 """
 
 
-class Node:
+class Node(object):
+    """
+    Implementation of a Node in a Binary Search Tree.
+    """
 
     def __init__(self, key=None, val=None, size_of_subtree=1):
         self.key = key
@@ -58,7 +24,10 @@ class Node:
         self.right = None
 
 
-class BinarySearchTree:
+class BinarySearchTree(object):
+    """
+    Implementation of a Binary Search Tree.
+    """
 
     def __init__(self):
         self.root = None
@@ -70,15 +39,23 @@ class BinarySearchTree:
             return node.size_of_subtree
 
     def size(self):
-        '''
+        """
         Return the number of nodes in the BST
-        '''
+
+        Worst Case Complexity: O(1)
+
+        Balanced Tree Complexity: O(1)
+        """
         return self._size(self.root)
 
     def is_empty(self):
-        '''
+        """
         Returns True if the BST is empty, False otherwise
-        '''
+
+        Worst Case Complexity: O(1)
+
+        Balanced Tree Complexity: O(1)
+        """
         return self.size() == 0
 
     def _get(self, key, node):
@@ -93,15 +70,23 @@ class BinarySearchTree:
             return node.val
 
     def get(self, key):
-        '''
+        """
         Return the value paired with 'key'
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         return self._get(key, self.root)
 
     def contains(self, key):
-        '''
+        """
         Returns True if the BST contains 'key', False otherwise
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         return self.get(key) is not None
 
     def _put(self, key, val, node):
@@ -124,15 +109,19 @@ class BinarySearchTree:
         return node
 
     def put(self, key, val):
-        '''
+        """
         Add a new key-value pair.
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         self.root = self._put(key, val, self.root)
 
     def _min_node(self):
-        '''
+        """
         Return the node with the minimum key in the BST
-        '''
+        """
         min_node = self.root
         # Return none if empty BST
         if min_node is None:
@@ -144,9 +133,13 @@ class BinarySearchTree:
         return min_node
 
     def min_key(self):
-        '''
+        """
         Return the minimum key in the BST
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         min_node = self._min_node()
         if min_node is None:
             return None
@@ -154,9 +147,9 @@ class BinarySearchTree:
             return min_node.key
 
     def _max_node(self):
-        '''
+        """
         Return the node with the maximum key in the BST
-        '''
+        """
         max_node = self.root
         # Return none if empty BST
         if max_node is None:
@@ -168,9 +161,13 @@ class BinarySearchTree:
         return max_node
 
     def max_key(self):
-        '''
+        """
         Return the maximum key in the BST
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         max_node = self._max_node()
         if max_node is None:
             return None
@@ -178,10 +175,10 @@ class BinarySearchTree:
             return max_node.key
 
     def _floor_node(self, key, node):
-        '''
+        """
         Returns the node with the biggest key that is less than or equal to the
         given value 'key'
-        '''
+        """
         if node is None:
             return None
 
@@ -202,10 +199,14 @@ class BinarySearchTree:
             return node
 
     def floor_key(self, key):
-        '''
+        """
         Returns the biggest key that is less than or equal to the given value
         'key'
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         floor_node = self._floor_node(key, self.root)
         if floor_node is None:
             return None
@@ -213,10 +214,10 @@ class BinarySearchTree:
             return floor_node.key
 
     def _ceiling_node(self, key, node):
-        '''
+        """
         Returns the node with the smallest key that is greater than or equal to
         the given value 'key'
-        '''
+        """
         if node is None:
             return None
 
@@ -235,10 +236,14 @@ class BinarySearchTree:
             return node
 
     def ceiling_key(self, key):
-        '''
+        """
         Returns the smallest key that is greater than or equal to the given
         value 'key'
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         ceiling_node = self._ceiling_node(key, self.root)
         if ceiling_node is None:
             return None
@@ -246,9 +251,9 @@ class BinarySearchTree:
             return ceiling_node.key
 
     def _select_node(self, rank, node):
-        '''
+        """
         Return the node with rank equal to 'rank'
-        '''
+        """
         if node is None:
             return None
 
@@ -261,9 +266,13 @@ class BinarySearchTree:
             return node
 
     def select_key(self, rank):
-        '''
+        """
         Return the key with rank equal to 'rank'
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         select_node = self._select_node(rank, self.root)
         if select_node is None:
             return None
@@ -283,9 +292,13 @@ class BinarySearchTree:
             return self._size(node.left)
 
     def rank(self, key):
-        '''
+        """
         Return the number of keys less than a given 'key'.
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         return self._rank(key, self.root)
 
     def _delete(self, key, node):
@@ -310,9 +323,13 @@ class BinarySearchTree:
         return node
 
     def delete(self, key):
-        '''
+        """
         Remove the node with key equal to 'key'
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         self.root = self._delete(key, self.root)
 
     def _delete_min(self, node):
@@ -324,9 +341,14 @@ class BinarySearchTree:
         return node
 
     def delete_min(self):
-        '''
+        """
         Remove the key-value pair with the smallest key.
-        '''
+
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         self.root = self._delete_min(self.root)
 
     def _delete_max(self, node):
@@ -338,9 +360,13 @@ class BinarySearchTree:
         return node
 
     def delete_max(self):
-        '''
+        """
         Remove the key-value pair with the largest key.
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(lg N)
+        """
         self.root = self._delete_max(self.root)
 
     def _keys(self, node, keys):
@@ -358,8 +384,12 @@ class BinarySearchTree:
         return keys
 
     def keys(self):
-        '''
+        """
         Return all of the keys in the BST in aschending order
-        '''
+
+        Worst Case Complexity: O(N)
+
+        Balanced Tree Complexity: O(N)
+        """
         keys = []
         return self._keys(self.root, keys)

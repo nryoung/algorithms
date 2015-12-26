@@ -1,10 +1,6 @@
 """
-    heap_sort.py
-
-    Implementation of heap sort on a list and returns a sorted list.
-
-    Heap Sort Overview:
-    -------------------
+    Heap Sort
+    ---------
     Uses the max heap data structure implemented in a list.
 
     Time Complexity: O(n log n)
@@ -19,6 +15,15 @@
 
 
 def max_heapify(seq, i, n):
+    """
+    The function of max_heapify is to let the value at seq[i] "float down" in
+    the max-heap so that the subtree rooted at index i becomes a max-heap.
+
+    :param seq: A list of integers
+    :param i: An integer that is an index in to the list that represents the
+              root of a subtree that max heapify is called on.
+    :param n: length of the list
+    """
     l = 2 * i + 1
     r = 2 * i + 2
 
@@ -35,12 +40,24 @@ def max_heapify(seq, i, n):
 
 
 def build_heap(seq):
+    """
+    Continously calls max_heapify on the list for each subtree.
+
+    :param seq: A list of integers
+    """
     n = len(seq) - 1
     for i in range(n//2, -1, -1):
         max_heapify(seq, i, n)
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
+
+    :param seq: A list of integers
+    :rtype: A list of sorted integers
+    """
     build_heap(seq)
     heap_size = len(seq) - 1
     for x in range(heap_size, 0, -1):

@@ -1,11 +1,7 @@
 """
-    insertion_sort.py
-
-    Implemenation of insertion sort on a list and returns a sorted list.
-
-    Insertion Sort Overview:
-    ------------------------
-    Uses insertion of elements in to the list to sort the list.
+    Insertion Sort
+    --------------
+    A sort that uses the insertion of elements in to the list to sort the list.
 
     Time Complexity: O(n**2)
 
@@ -19,6 +15,13 @@
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
+
+    :param seq: A list of integers
+    :rtype: A list of integers
+    """
     for n in range(1, len(seq)):
         item = seq[n]
         hole = n

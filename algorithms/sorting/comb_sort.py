@@ -1,10 +1,6 @@
 """
-    comb_sort.py
-
-    Implementation of comb sort on a list and returns a sorted list.
-
-    Comb Sort Overview:
-    -------------------
+    Comb Sort
+    ---------
     Improves on bubble sort by using a gap sequence to remove turtles.
 
     Time Complexity: O(n**2)
@@ -19,6 +15,14 @@
 
 
 def sort(seq):
+    """
+    Takes a list of integers and sorts them in ascending order. This sorted
+    list is then returned.
+
+    :param seq: A list of integers
+    :rtype: A list of sorted integers
+    """
+
     gap = len(seq)
     swap = True
 

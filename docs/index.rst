@@ -1,11 +1,10 @@
+.. algorithms documentation master file, created by
+   sphinx-quickstart on Thu Oct  8 22:36:00 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
 Algorithms
 ==========
-
-.. image:: https://travis-ci.org/nryoung/algorithms.svg?branch=master
-    :target: https://travis-ci.org/nryoung/algorithms
-
-.. image:: http://codecov.io/github/nryoung/algorithms/coverage.svg?branch=master
-    :target: http://codecov.io/github/nryoung/algorithms?branch=master
 
 Algorithms is a library of algorithms and data structures implemented in Python.
 
@@ -31,7 +30,7 @@ Features
 --------
 
 - Pseudo code, algorithm complexities and futher info with each algorithm.
-- Test coverage for each algorithm and data structure.
+- Test coverage for each algorithm and data structure. 
 - Super sweet documentation.
 
 Installation:
@@ -59,3 +58,12 @@ Contributing:
 
 Contributions are always welcome. Check out the contributing guidelines to get
 started.
+
+
+Table of Contents:
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   algorithms

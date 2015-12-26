@@ -1,10 +1,8 @@
 """
-    rabinkarp_search.py
-
     Implementation of Rabin-Karp search on a given string.
 
-    Rabin-Karp Search Overview:
-    ------------------------
+    Rabin-Karp Search
+    -----------------
     Search for a substring in a given string, by comparing hash values
     of the strings.
 
@@ -18,6 +16,14 @@ from hashlib import md5
 
 
 def search(s, sub):
+    """
+    Uses hashing to find any one of a set of pattern strings in a text.
+
+    :param s: The string to be searched.
+    :param sub: The substring to be searched for.
+    :rtype: The indices of all occurences of where the substring is found in
+            the string.
+    """
     n, m = len(s), len(sub)
     hsub_digest = md5(sub.encode('utf-8')).digest()
     offsets = []
