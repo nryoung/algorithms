@@ -13,7 +13,7 @@ The main purpose of this library is to be an educational tool. You probably
 shouldn't use these in production, instead, opting for the optimized versions of
 these algorithms that can be found else where.
 
-You should totally check out the docs for implementation details, complexities
+You should totally check out the `docs`_ for implementation details, complexities
 and further info.
 
 Usage
@@ -32,7 +32,7 @@ Features
 
 - Pseudo code, algorithm complexities and futher info with each algorithm.
 - Test coverage for each algorithm and data structure.
-- Super sweet documentation.
+- Super sweet `documentation`_.
 
 Installation:
 -------------
@@ -59,3 +59,6 @@ Contributing:
 
 Contributions are always welcome. Check out the contributing guidelines to get
 started.
+
+.. _`docs`: http://algorithms.readthedocs.org/en/latest/
+.. _`documentation`: http://algorithms.readthedocs.org/en/latest/
