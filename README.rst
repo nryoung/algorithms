@@ -7,6 +7,9 @@ Algorithms
 .. image:: http://codecov.io/github/nryoung/algorithms/coverage.svg?branch=master
     :target: http://codecov.io/github/nryoung/algorithms?branch=master
 
+.. image:: https://readthedocs.org/projects/algorithms/badge/?version=latest
+    :target: http://algorithms.readthedocs.org/en/latest/?badge=latest
+
 Algorithms is a library of algorithms and data structures implemented in Python.
 
 The main purpose of this library is to be an educational tool. You probably
