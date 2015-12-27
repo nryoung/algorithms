@@ -9,7 +9,7 @@ def long_description():
     return readme
 
 setup(name='algorithms',
-      version='0.1',
+      version='1.0',
       description='module of algorithms for Python',
       long_description=long_description(),
       url='https://github.com/nryoung/algorithms',

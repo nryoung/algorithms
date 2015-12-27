@@ -10,6 +10,9 @@ Algorithms
 .. image:: https://readthedocs.org/projects/algorithms/badge/?version=latest
     :target: http://algorithms.readthedocs.org/en/latest/?badge=latest
 
+.. image:: https://badge.fury.io/py/algorithms.svg
+    :target: https://badge.fury.io/py/algorithms
+
 Algorithms is a library of algorithms and data structures implemented in Python.
 
 The main purpose of this library is to be an educational tool. You probably
