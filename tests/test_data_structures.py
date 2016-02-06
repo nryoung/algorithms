@@ -10,7 +10,8 @@ from algorithms.data_structures import (
     digraph,
     singly_linked_list,
     undirected_graph,
-    binary_search_tree
+    binary_search_tree,
+    lcp_array
 )
 
 
@@ -671,3 +672,45 @@ class TestBinarySearchTree(unittest.TestCase):
             self.bst.keys(),
             ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
         )
+
+
+class TestLCPSuffixArrays(unittest.TestCase):
+    def setUp(self):
+        super(TestLCPSuffixArrays, self).setUp()
+        self.case_1 = "aaaaaa"
+        self.s_array_1 = [5, 4, 3, 2, 1, 0]
+        self.rank_1 = [5, 4, 3, 2, 1, 0]
+        self.lcp_1 = [1, 2, 3, 4, 5, 0]
+
+        self.case_2 = "abcabcdd"
+        self.s_array_2 = [0, 2, 4, 1, 3, 5, 7, 6]
+        self.rank_2 = [0, 3, 1, 4, 2, 5, 7, 6]
+        self.lcp_2 = [3, 0, 2, 0, 1, 0, 1, 0]
+
+        self.case_3 = "kmckirrrmppp"
+        self.s_array_3 = [3, 4, 0, 2, 1, 11, 10, 9, 5, 8, 7, 6]
+        self.rank_3 = [2, 4, 3, 0, 1, 8, 11, 10, 9, 7, 6, 5]
+        self.lcp_3 = [0, 0, 1, 0, 1, 0, 1, 2, 0, 1, 2, 0]
+
+    def test_lcp_array(self):
+        lcp = lcp_array.lcp_array(self.case_1, self.s_array_1, self.rank_1)
+        self.assertEqual(lcp, self.lcp_1)
+
+        lcp = lcp_array.lcp_array(self.case_2, self.s_array_2, self.rank_2)
+        self.assertEqual(lcp, self.lcp_2)
+
+        lcp = lcp_array.lcp_array(self.case_3, self.s_array_3, self.rank_3)
+        self.assertEqual(lcp, self.lcp_3)
+
+    def test_suffix_array(self):
+        s_array, rank = lcp_array.suffix_array(self.case_1)
+        self.assertEqual(s_array, self.s_array_1)
+        self.assertEqual(rank, self.rank_1)
+
+        s_array, rank = lcp_array.suffix_array(self.case_2)
+        self.assertEqual(s_array, self.s_array_2)
+        self.assertEqual(rank, self.rank_2)
+
+        s_array, rank = lcp_array.suffix_array(self.case_3)
+        self.assertEqual(s_array, self.s_array_3)
+        self.assertEqual(rank, self.rank_3)
