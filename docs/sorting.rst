@@ -60,3 +60,8 @@ Sorting
     :members:
     :undoc-members:
     :show-inheritance:
+
+.. automodule:: algorithms.data_structures.lcp_array
+    :members:
+    :undoc-members:
+    :show-inheritance:
