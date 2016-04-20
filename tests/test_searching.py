@@ -3,11 +3,11 @@ import unittest
 
 from algorithms.searching import (
     binary_search,
-    kmp_search,
-    rabinkarp_search,
     bmh_search,
+    breadth_first_search,
     depth_first_search,
-    breadth_first_search
+    kmp_search,
+    rabinkarp_search
 )
 
 
@@ -41,32 +41,6 @@ class TestBinarySearch(unittest.TestCase):
         self.assertIs(rv5, 4)
 
 
-class TestKMPSearch(unittest.TestCase):
-    """
-    Tests KMP search on string "ABCDE FG ABCDEABCDEF"
-    """
-
-    def test_kmpsearch(self):
-        self.string = "ABCDE FG ABCDEABCDEF"
-        rv1 = kmp_search.search(self.string, "ABCDEA")
-        rv2 = kmp_search.search(self.string, "ABCDER")
-        self.assertIs(rv1[0], 9)
-        self.assertFalse(rv2)
-
-
-class TestRabinKarpSearch(unittest.TestCase):
-    """
-    Tests Rabin-Karp search on string "ABCDEFGHIJKLMNOP"
-    """
-
-    def test_rabinkarpsearch(self):
-        self.string = "ABCDEFGHIJKLMNOP"
-        rv1 = rabinkarp_search.search(self.string, "MNOP")
-        rv2 = rabinkarp_search.search(self.string, "BCA")
-        self.assertIs(rv1[0], 12)
-        self.assertFalse(rv2)
-
-
 class TestBMHSearch(unittest.TestCase):
     """
     Tests BMH search on string "ABCDE FG ABCDEABCDEF"
@@ -78,6 +52,38 @@ class TestBMHSearch(unittest.TestCase):
         rv2 = bmh_search.search(self.string, "ABCDER")
         self.assertIs(rv1[0], 9)
         self.assertFalse(rv2)
+
+
+class TestBreadthFirstSearch(unittest.TestCase):
+    """
+    Tests DFS on a graph represented by a adjacency list
+    """
+    def test_bfs(self):
+        self.graph = {
+            'A': {'B', 'C'},
+            'B': {'A', 'D', 'E'},
+            'C': {'A', 'F'},
+            'D': {'B'},
+            'E': {'B', 'F'},
+            'F': {'C', 'E'}
+        }
+        rv1 = breadth_first_search.bfs(self.graph, 'A')
+        self.assertEqual(rv1, {'C', 'A', 'B', 'D', 'F', 'E'})
+        self.graph = {
+            'A': {'B', 'C', 'E'},
+            'B': {'A', 'D', 'F'},
+            'C': {'A', 'G'},
+            'D': {'B'},
+            'F': {'B'},
+            'E': {'A'},
+            'G': {'C'}
+        }
+        rv1 = breadth_first_search.bfs(self.graph, "A")
+        rv2 = breadth_first_search.bfs(self.graph, "G")
+        rv1e = breadth_first_search.bfs(self.graph, "Z")
+        self.assertEqual(rv1, {'A', 'B', 'D', 'F', 'C', 'G', 'E'})
+        self.assertEqual(rv2, {'G', 'C', 'A', 'B', 'D', 'F', 'E'})
+        self.assertEqual(rv1e, None)
 
 
 class TestDepthFirstSearch(unittest.TestCase):
@@ -158,33 +164,27 @@ class TestDepthFirstSearch(unittest.TestCase):
         self.assertEqual(rv3e, None)
 
 
-class TestBreadthFirstSearch(unittest.TestCase):
+class TestKMPSearch(unittest.TestCase):
     """
-    Tests DFS on a graph represented by a adjacency list
+    Tests KMP search on string "ABCDE FG ABCDEABCDEF"
     """
-    def test_bfs(self):
-        self.graph = {
-            'A': set(['B', 'C']),
-            'B': set(['A', 'D', 'E']),
-            'C': set(['A', 'F']),
-            'D': set(['B']),
-            'E': set(['B', 'F']),
-            'F': set(['C', 'E'])
-        }
-        rv1 = breadth_first_search.bfs(self.graph, 'A')
-        self.assertEqual(rv1, {'C', 'A', 'B', 'D', 'F', 'E'})
-        self.graph = {
-            'A': set(['B', 'C', 'E']),
-            'B': set(['A', 'D', 'F']),
-            'C': set(['A', 'G']),
-            'D': set(['B']),
-            'F': set(['B']),
-            'E': set(['A']),
-            'G': set(['C'])
-        }
-        rv1 = breadth_first_search.bfs(self.graph, "A")
-        rv2 = breadth_first_search.bfs(self.graph, "G")
-        rv1e = breadth_first_search.bfs(self.graph, "Z")
-        self.assertEqual(rv1, set(['A', 'B', 'D', 'F', 'C', 'G', 'E']))
-        self.assertEqual(rv2, set(['G', 'C', 'A', 'B', 'D', 'F', 'E']))
-        self.assertEqual(rv1e, None)
+
+    def test_kmpsearch(self):
+        self.string = "ABCDE FG ABCDEABCDEF"
+        rv1 = kmp_search.search(self.string, "ABCDEA")
+        rv2 = kmp_search.search(self.string, "ABCDER")
+        self.assertIs(rv1[0], 9)
+        self.assertFalse(rv2)
+
+
+class TestRabinKarpSearch(unittest.TestCase):
+    """
+    Tests Rabin-Karp search on string "ABCDEFGHIJKLMNOP"
+    """
+
+    def test_rabinkarpsearch(self):
+        self.string = "ABCDEFGHIJKLMNOP"
+        rv1 = rabinkarp_search.search(self.string, "MNOP")
+        rv2 = rabinkarp_search.search(self.string, "BCA")
+        self.assertIs(rv1[0], 12)
+        self.assertFalse(rv2)

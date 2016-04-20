@@ -2,17 +2,18 @@ import random
 import unittest
 
 from algorithms.sorting import (
+    bogo_sort,
     bubble_sort,
-    selection_sort,
+    cocktail_sort,
+    comb_sort,
+    gnome_sort,
+    heap_sort,
     insertion_sort,
     merge_sort,
     quick_sort,
-    heap_sort,
-    shell_sort,
-    comb_sort,
-    cocktail_sort,
     quick_sort_in_place,
-    gnome_sort,
+    selection_sort,
+    shell_sort,
     strand_sort,
 )
 
@@ -28,6 +29,16 @@ class SortingAlgorithmTestCase(unittest.TestCase):
         self.correct = list(range(10))
 
 
+class TestBogoSort(SortingAlgorithmTestCase):
+    """
+    Tests Bogo sort on a small range from 0-9
+    """
+
+    def test_bogosort(self):
+        self.output = bogo_sort.sort(self.input)
+        self.assertEqual(self.correct, self.input)
+
+
 class TestBubbleSort(SortingAlgorithmTestCase):
     """
     Tests Bubble sort on a small range from 0-9
@@ -38,13 +49,43 @@ class TestBubbleSort(SortingAlgorithmTestCase):
         self.assertEqual(self.correct, self.output)
 
 
-class TestSelectionSort(SortingAlgorithmTestCase):
+class TestCocktailSort(SortingAlgorithmTestCase):
     """
-    Tests Selection sort on a small range from 0-9
+    Tests Cocktail sort on a small range from 0-9
     """
 
-    def test_selectionsort(self):
-        self.output = selection_sort.sort(self.input)
+    def test_cocktailsort(self):
+        self.output = cocktail_sort.sort(self.input)
+        self.assertEqual(self.correct, self.output)
+
+
+class TestCombSort(SortingAlgorithmTestCase):
+    """
+    Tests Comb sort on a small range from 0-9
+    """
+
+    def test_combsort(self):
+        self.output = comb_sort.sort(self.input)
+        self.assertEqual(self.correct, self.output)
+
+
+class TestGnomeSort(SortingAlgorithmTestCase):
+    """
+    Tests Gnome sort on a small range from 0-9
+    """
+
+    def test_gnomesort(self):
+        self.output = gnome_sort.sort(self.input)
+        self.assertEqual(self.correct, self.output)
+
+
+class TestHeapSort(SortingAlgorithmTestCase):
+    """
+    Test Heap sort on a small range from 0-9
+    """
+
+    def test_heapsort(self):
+        self.output = heap_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
 
 
@@ -53,7 +94,7 @@ class TestInsertionSort(SortingAlgorithmTestCase):
     Tests Insertion sort on a small range from 0-9
     """
 
-    def test_selectionsort(self):
+    def test_insertionsort(self):
         self.output = insertion_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
 
@@ -108,13 +149,13 @@ class TestQuickSortInPlace(SortingAlgorithmTestCase):
         )
 
 
-class TestHeapSort(SortingAlgorithmTestCase):
+class TestSelectionort(SortingAlgorithmTestCase):
     """
-    Test Heap sort on a small range from 0-9
+    Test Selection sort on a small range from 0-9
     """
 
-    def test_heapsort(self):
-        self.output = heap_sort.sort(self.input)
+    def test_selectionsort(self):
+        self.output = selection_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
 
 
@@ -125,36 +166,6 @@ class TestShellSort(SortingAlgorithmTestCase):
 
     def test_shellsort(self):
         self.output = shell_sort.sort(self.input)
-        self.assertEqual(self.correct, self.output)
-
-
-class TestCombSort(SortingAlgorithmTestCase):
-    """
-    Test Comb sort on a small range from 0-9
-    """
-
-    def test_combsort(self):
-        self.output = comb_sort.sort(self.input)
-        self.assertEqual(self.correct, self.output)
-
-
-class TestCocktailSort(SortingAlgorithmTestCase):
-    """
-    Tests Cocktail sort on a small range from 0-9
-    """
-
-    def test_cocktailsort(self):
-        self.output = cocktail_sort.sort(self.input)
-        self.assertEqual(self.correct, self.output)
-
-
-class TestGnomeSort(SortingAlgorithmTestCase):
-    """
-    Tests Gnome sort on a small range from 0-9
-    """
-
-    def test_gnomesort(self):
-        self.output = gnome_sort.sort(self.input)
         self.assertEqual(self.correct, self.output)
 
 

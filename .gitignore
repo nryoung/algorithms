@@ -9,3 +9,4 @@ build/
 /*.egg-info
 *.ropeproject/
 docs/_build
+.idea/*

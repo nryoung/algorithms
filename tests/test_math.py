@@ -1,11 +1,28 @@
 import unittest
 
+from algorithms.math.approx_cdf import cdf
 from algorithms.math.extended_gcd import extended_gcd
 from algorithms.math.lcm import lcm
-from algorithms.math.sieve_eratosthenes import eratosthenes
+from algorithms.math.primality_test import is_prime
 from algorithms.math.sieve_atkin import atkin
+from algorithms.math.sieve_eratosthenes import eratosthenes
 from algorithms.math.std_normal_pdf import pdf
-from algorithms.math.approx_cdf import cdf
+
+
+class TestApproxCdf(unittest.TestCase):
+
+    def test_cdf(self):
+        # Calculate cumulative distribution function for x=1
+        a = cdf(1)
+        self.assertAlmostEqual(a, 0.841344746068543)
+
+        # Calculate cumulative distribution function x=0
+        a = cdf(0)
+        self.assertAlmostEqual(a, 0.5)
+
+        # Calculate cumulative distribution function for x=(-1)
+        a = cdf(-1)
+        self.assertAlmostEqual(a, 0.15865525393145702)
 
 
 class TestExtendedGCD(unittest.TestCase):
@@ -43,25 +60,15 @@ class TestLCM(unittest.TestCase):
         self.assertEqual(r, r2)
 
 
-class TestSieveOfEratosthenes(unittest.TestCase):
-
-    def test_eratosthenes(self):
-        rv1 = eratosthenes(-10)
-        rv2 = eratosthenes(10)
-        rv3 = eratosthenes(100, 5)
-        rv4 = eratosthenes(100, -10)
-        self.assertEqual(rv1, [])
-        self.assertEqual(rv2, [2, 3, 5, 7])
-        self.assertEqual(
-            rv3,
-            [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
-             67, 71, 73, 79, 83, 89, 97]
-        )
-        self.assertEqual(
-            rv4,
-            [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
-             61, 67, 71, 73, 79, 83, 89, 97]
-        )
+class TestPrimalityTest(unittest.TestCase):
+    def test_is_prime(self):
+        self.assertIs(is_prime(3), True)
+        self.assertIs(is_prime(15), False)
+        self.assertIs(is_prime(20), False)
+        self.assertIs(is_prime(37), True)
+        self.assertIs(is_prime(63), False)
+        self.assertIs(is_prime(87), False)
+        self.assertIs(is_prime(103), True)
 
 
 class TestSieveOfAtkin(unittest.TestCase):
@@ -96,6 +103,27 @@ class TestSieveOfAtkin(unittest.TestCase):
         self.assertEqual(rv4, [])
 
 
+class TestSieveOfEratosthenes(unittest.TestCase):
+
+    def test_eratosthenes(self):
+        rv1 = eratosthenes(-10)
+        rv2 = eratosthenes(10)
+        rv3 = eratosthenes(100, 5)
+        rv4 = eratosthenes(100, -10)
+        self.assertEqual(rv1, [])
+        self.assertEqual(rv2, [2, 3, 5, 7])
+        self.assertEqual(
+            rv3,
+            [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
+             67, 71, 73, 79, 83, 89, 97]
+        )
+        self.assertEqual(
+            rv4,
+            [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
+             61, 67, 71, 73, 79, 83, 89, 97]
+        )
+
+
 class TestStdNormPDF(unittest.TestCase):
 
     def test_pdf(self):
@@ -110,19 +138,3 @@ class TestStdNormPDF(unittest.TestCase):
         # Calculate standard normal pdf for x=13, mean=10, std_dev=1
         a = pdf(x=13, mean=10, std_dev=1)
         self.assertAlmostEqual(a, 0.004431848411938008)
-
-
-class TestApproxCdf(unittest.TestCase):
-
-    def test_cdf(self):
-        # Calculate cumulative distribution function for x=1
-        a = cdf(1)
-        self.assertAlmostEqual(a, 0.841344746068543)
-
-        # Calculate cumulative distribution function x=0
-        a = cdf(0)
-        self.assertAlmostEqual(a, 0.5)
-
-        # Calculate cumulative distribution function for x=(-1)
-        a = cdf(-1)
-        self.assertAlmostEqual(a, 0.15865525393145702)
