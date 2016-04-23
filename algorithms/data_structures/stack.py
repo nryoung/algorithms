@@ -11,7 +11,6 @@
 
 
 class Stack:
-    stack_list = []
 
     def __init__(self):
         self.stack_list = []
@@ -39,7 +38,7 @@ class Stack:
 
         Time Complexity:  O(1)
         """
-        return not len(self.stack_list)
+        return not self.size()
 
     def size(self):
         """
