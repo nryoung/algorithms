@@ -10,3 +10,4 @@ build/
 *.ropeproject/
 docs/_build
 .idea/*
+.cache/
