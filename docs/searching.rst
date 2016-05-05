@@ -25,3 +25,8 @@ Searching
     :members:
     :undoc-members:
     :show-inheritance:
+
+.. automodule:: algorithms.searching.ternary_search
+    :members:
+    :undoc-members:
+    :show-inheritance:
