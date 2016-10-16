@@ -17,7 +17,7 @@ from collections import deque
 class Queue:
 
     def __init__(self):
-        self._queue_list = deque([])
+        self._queue = deque([])
 
     def add(self, value):
         """
@@ -25,7 +25,7 @@ class Queue:
 
         Worst Case Complexity:  O(1)
         """
-        self._queue_list.append(value)
+        self._queue.append(value)
 
     def remove(self):
         """
@@ -34,7 +34,7 @@ class Queue:
         Worst Case Complexity:  O(1)
         """
 
-        return self._queue_list.popleft()
+        return self._queue.popleft()
 
     def is_empty(self):
         """
@@ -42,7 +42,7 @@ class Queue:
 
         Worst Case Complexity:  O(1)
         """
-        return not len(self._queue_list)
+        return not len(self._queue)
 
     def size(self):
         """
@@ -50,4 +50,4 @@ class Queue:
 
         Worst Case Complexity:  O(1)
         """
-        return len(self._queue_list)
+        return len(self._queue)
