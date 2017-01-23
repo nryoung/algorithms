@@ -1,5 +1,5 @@
 """
-    Unidrected Graph
+    Undirected Graph
     ----------------
     The Undirected_Graph class represents an undirected graph of vertices
     which can be any hashable value.
