@@ -27,6 +27,14 @@ class TestPollardRho(unittest.TestCase):
             res *= j
         self.assertEqual(x, res)
 
+    def test_pollard_rho_x_is_zero(self):
+        x = 0
+        factors = pollard_rho(x)
+        res = 1
+        for j in factors:
+            res *= j
+        self.assertEqual(x, res)
+
 
 class TestTrialDivision(unittest.TestCase):
 

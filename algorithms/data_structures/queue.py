@@ -15,7 +15,6 @@ from collections import deque
 
 
 class Queue:
-    queue_list = deque([])
 
     def __init__(self):
         self.queue_list = deque([])
