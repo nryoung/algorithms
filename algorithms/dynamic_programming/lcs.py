@@ -1,5 +1,5 @@
 """
-    Longest Common Sunsequence
+    Longest Common Subsequence
     --------------------------
     Implements the dynamic programming solution to the longest common
     subsequence algorithm.
