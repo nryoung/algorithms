@@ -1,5 +1,6 @@
 """ Unit Tests for searching """
 import unittest
+import math
 
 from algorithms.searching import (
     binary_search,
@@ -7,7 +8,8 @@ from algorithms.searching import (
     breadth_first_search,
     depth_first_search,
     kmp_search,
-    rabinkarp_search
+    rabinkarp_search,
+    ternary_search
 )
 
 
@@ -188,3 +190,18 @@ class TestRabinKarpSearch(unittest.TestCase):
         rv2 = rabinkarp_search.search(self.string, "BCA")
         self.assertIs(rv1[0], 12)
         self.assertFalse(rv2)
+
+
+class TestTernarySearch(unittest.TestCase):
+    """
+    Tests teranry search algorithm on unimodal functions
+    """
+
+    def test_terarysearch(self):
+        self.function1 = lambda x: -(x - 2) ** 2
+        self.function2 = lambda x: math.cos(x)
+        self.eps = 1e-6
+        rv1 = ternary_search.search(self.function1, -2.0, 2.0, self.eps)
+        rv2 = ternary_search.search(self.function2, -2.0, 2.0, self.eps)
+        self.assertAlmostEqual(rv1, 2.0, 6)
+        self.assertAlmostEqual(rv2, 0.0, 6)
