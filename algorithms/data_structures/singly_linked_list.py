@@ -48,30 +48,34 @@ class SinglyLinkedList:
         self.head = node
         self.size += 1
 
+    def _search_node(self, value, remove=False):
+        current = self.head
+        previous = None
+
+        while current:
+            if current.data == value:
+                break
+            else:
+                previous = current
+                current = current.next
+
+        if remove and current:
+            if previous is None:  # Head node
+                self.head = current.next
+            else:  # None head node
+                previous.set_next(current.next)
+            self.size -= 1
+
+        return current is not None
+
     def remove(self, value):
         """
         Remove element from list
 
         Time Complexity:  O(N)
         """
-        current = self.head
-        previous = None
-        found = False
 
-        while not found:
-            if current.data == value:
-                found = True
-                self.size -= 1
-            else:
-                previous = current
-                current = current.next
-
-        if previous is None:  # Head node
-            self.head = current.next
-        else:  # None head node
-            previous.set_next(current.next)
-
-        return found
+        return self._search_node(value, True)
 
     def search(self, value):
         """
@@ -79,16 +83,7 @@ class SinglyLinkedList:
 
         Time Complexity:  O(N)
         """
-        current = self.head
-        found = False
-
-        while current and not found:
-            if current.get_data() == value:
-                found = True
-            else:
-                current = current.next
-
-        return found
+        return self._search_node(value)
 
     def size(self):
         """
