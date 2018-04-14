@@ -1,3 +1,6 @@
+**This repository is no longer maintained, but is being kept around for educational purposes. If you want a more complete algorithms repo check out: https://github.com/keon/algorithms**
+=====
+
 Algorithms
 ==========
 
